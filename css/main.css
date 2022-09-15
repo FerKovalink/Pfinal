@@ -43,7 +43,7 @@ nav ul li a {
   font-family: "Bungee Spice", cursive;
   font-size: 2.5rem !important;
   padding-right: 30px !important;
-  transition: 0.2s !important;
+  transition: 0.3s !important;
 }
 nav ul li a:hover {
   font-size: 2.6rem !important;
@@ -61,14 +61,13 @@ nav ul li a:hover {
   width: 100%;
   background-color: black;
   padding-top: 70px;
-  padding-bottom: 500px;
+  padding-bottom: 300px;
 }
 .pjs h1 {
   font-size: 6rem;
-  color: #0b8062;
-  font-weight: 600;
   font-family: "Combo", cursive;
-  margin-bottom: 10px;
+  color: #0b8062;
+  font-weight: 700;
 }
 
 .peluca {
@@ -103,6 +102,8 @@ nav ul li a:hover {
   font-family: "Combo", cursive;
   color: #8758FF;
   font-weight: 800;
+  background-color: rgba(34, 40, 49, 0.8);
+  border-radius: 60px;
 }
 
 /*# sourceMappingURL=main.css.map */

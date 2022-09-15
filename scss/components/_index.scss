@@ -7,7 +7,7 @@ nav {
                 font-family: map-get($map: $fonts, $key:"nav");
                 font-size: 2.5rem !important;
                 padding-right: 30px !important;
-                transition: 0.2s !important;
+                transition: 0.3s !important;
 
                 &:hover {
                     font-size: 2.6rem !important;
@@ -28,17 +28,14 @@ nav {
     width: 100%;
     background-color: black;
     padding-top: 70px;
-    padding-bottom: 500px;
+    padding-bottom: 300px;
 
 
     h1 {
         font-size: 6rem;
+        font-family: map-get($map: $fonts, $key:"combo");
         color: map-get($map: $color, $key: "verde");
-        font-weight: 600;
-        font-family: map-get($map: $fonts, $key: "combo");
-        margin-bottom: 10px;
-
-
+        font-weight: 700;
     }
 }
 
@@ -63,20 +60,23 @@ nav {
     right: 0;
     margin: 0 auto;
 
-    h5{
+    h5 {
         font-size: 4rem;
         padding-bottom: 5px;
         font-family: map-get($map: $fonts, $key:"nav");
-        
+
 
     }
 
-    p{
+    p {
         font-size: 3.5rem;
         padding-bottom: 0px;
-        font-family: map-get($map: $fonts, $key:"combo" );
+        font-family: map-get($map: $fonts, $key:"combo");
         color: map-get($map: $color, $key: "violeta");
         font-weight: 800;
+        background-color: rgba(34,40,49,0.8);
+        border-radius: 60px;
+        
     }
 
 
