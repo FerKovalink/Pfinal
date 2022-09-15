@@ -1,14 +1,15 @@
-nav{
+nav {
     background: map-get($map: $color, $key: "negro");
-    ul{
-        li{
-            a{
+
+    ul {
+        li {
+            a {
                 font-family: map-get($map: $fonts, $key:"nav");
                 font-size: 2.5rem !important;
                 padding-right: 30px !important;
                 transition: 0.2s !important;
 
-                &:hover{
+                &:hover {
                     font-size: 2.6rem !important;
                 }
             }
@@ -16,13 +17,13 @@ nav{
     }
 }
 
-.bann{
-    img{
-        width: 100%;        
+.bann {
+    img {
+        width: 100%;
     }
 }
 
-.pjs{
+.pjs {
     @include box-flex(center, center, column);
     width: 100%;
     background-color: black;
@@ -30,23 +31,37 @@ nav{
     padding-bottom: 500px;
 
 
-    h1{
+    h1 {
         font-size: 6rem;
         color: map-get($map: $color, $key: "verde");
         font-weight: 600;
         font-family: map-get($map: $fonts, $key: "combo");
-        margin-bottom: 20px;
-        
-    
+        margin-bottom: 10px;
+
+
     }
 }
 
-.peluca{
-    width: 400px;
-    margin-top: 50px;
+.peluca {
+    @include box-flex(center, center, column);
+    margin-top: 10px;
+    position: relative;
 
+
+    img {
+        width: 100%;
+
+    }
 }
 
-footer{
+.sape {
+    width: 25%;
+    position: absolute;
+    top: -10;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
     
 }
+
+footer {}

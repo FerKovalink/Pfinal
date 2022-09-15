@@ -68,12 +68,28 @@ nav ul li a:hover {
   color: #0b8062;
   font-weight: 600;
   font-family: "Combo", cursive;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .peluca {
-  width: 400px;
-  margin-top: 50px;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 10px;
+  position: relative;
+}
+.peluca img {
+  width: 100%;
+}
+
+.sape {
+  width: 25%;
+  position: absolute;
+  top: -10;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
 }
 
 /*# sourceMappingURL=main.css.map */
