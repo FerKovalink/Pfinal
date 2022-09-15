@@ -1,43 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dungeon</title>
-    <!-- mi css -->
-    <link rel="stylesheet" href="css/main.css">
-    <!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dungeon</title>
+  <!-- mi css -->
+  <link rel="stylesheet" href="css/main.css">
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 </head>
 
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav">
-                <li class="nav-item active">
-                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Features</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Pricing</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link disabled" href="#">Disabled</a>
-                </li>
-              </ul>
+  <header>
+    <!-- navBar -->
+    <nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark ">
+      <div class="container-fluid">
+        <!-- <a class="navbar-brand" href="#">Phandallin</a> -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto p-1">
+            <li class="nav-item">
+              <a class="nav-link text-uppercase active" aria-current="page" href="#">Phandallin</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-uppercase" href="#">Personajes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-uppercase" href="#">Mapa</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-uppercase" href="#">Historia</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-uppercase" href="#">Productos</a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="bann">
+      <img src="img/index/bg.jpg" alt="imagen de fondo">
+
+    </div>
+
+  </header>
+  <main>
+    <div class="pjs">
+      <h1>Phandallin un mundo de aventuras</h1>
+
+      <div class="container">
+        <!-- Slider main container-->
+        <div class="swiper-container">
+          <!-- Additional required wrapper-->
+          <div class="swiper-wrapper">
+            <!-- Slides-->
+            <div class="swiper-slide">
+              <div class="card">
+                <div class="card__header">
+                  <div class="header-in-card">
+                    <div class="header-in-card__menu">
+                      <div class="menu">
+                        <div class="menu__icon"><span></span><span></span><span></span></div><a href="http://"
+                          target="_blank" class="menu__item">Anatomy</a><a href="http://" target="_blank"
+                          class="menu__item">Ecology</a><a href="http://" target="_blank"
+                          class="menu__item">Intelligence</a><a href="http://" target="_blank"
+                          class="menu__item">Mythology</a>
+                      </div>
+                    </div>
+                    <div class="header-in-card__share-and-like">
+                      <div class="share-block">
+                        <div class="share-block__share-icon">
+                          <span></span><span></span><span></span><span></span><span></span></div>
+                        <div class="share-block__facebook-icon"></div>
+                        <div class="share-block__twitter-icon"></div>
+                      </div>
+                      <div class="like-block">
+                        <div class="like-block__like-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card__body">
+                  <h1 class="card-title">Dogs</h1>
+                  <div class="card-meta">
+                    <div class="card-meta__title">Tags</div>
+                    <div class="card-meta__line"></div>
+                    <div class="card-meta__quantity">22.345 images</div>
+                  </div>
+                  <div class="card-tags"><a href="#" target="_blank" class="card-tags__item">Animals</a><a href="#"
+                      target="_blank" class="card-tags__item">Dog</a><a href="#" target="_blank"
+                      class="card-tags__item">Smiling</a><a href="#" target="_blank"
+                      class="card-tags__item">Fluffy</a><a href="#" target="_blank" class="card-tags__item">Awesome</a>
+                  </div>
+                </div><img src="https://i.postimg.cc/NM5pYZ9X/dog.png" alt="" class="card__image">
+              </div>
             </div>
-          </nav>
-    </header>
-    
-    <script src="js/stock.js"></script>
-    
+            <div class="swiper-slide">
+              <div class="card">
+                <div class="card__header">
+                  <div class="header-in-card">
+                    <div class="header-in-card__menu">
+                      <div class="menu">
+                        <div class="menu__icon"><span></span><span></span><span></span></div><a href="http://"
+                          target="_blank" class="menu__item">Anatomy</a><a href="http://" target="_blank"
+                          class="menu__item">Ecology</a><a href="http://" target="_blank"
+                          class="menu__item">Intelligence</a><a href="http://" target="_blank"
+                          class="menu__item">Mythology</a>
+                      </div>
+                    </div>
+                    <div class="header-in-card__share-and-like">
+                      <div class="share-block">
+                        <div class="share-block__share-icon">
+                          <span></span><span></span><span></span><span></span><span></span></div>
+                        <div class="share-block__facebook-icon"></div>
+                        <div class="share-block__twitter-icon"></div>
+                      </div>
+                      <div class="like-block">
+                        <div class="like-block__like-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card__body">
+                  <h1 class="card-title">Birds</h1>
+                  <div class="card-meta">
+                    <div class="card-meta__title">Tags</div>
+                    <div class="card-meta__line"></div>
+                    <div class="card-meta__quantity">13.007 images</div>
+                  </div>
+                  <div class="card-tags"><a href="#" target="_blank" class="card-tags__item">Animals</a><a href="#"
+                      target="_blank" class="card-tags__item">Bird</a><a href="#" target="_blank"
+                      class="card-tags__item">Smiling</a><a href="#" target="_blank"
+                      class="card-tags__item">Fluffy</a><a href="#" target="_blank" class="card-tags__item">Awesome</a>
+                  </div>
+                </div><img src="https://i.postimg.cc/1zRv78yJ/birds.png" alt="" class="card__image">
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card">
+                <div class="card__header">
+                  <div class="header-in-card">
+                    <div class="header-in-card__menu">
+                      <div class="menu">
+                        <div class="menu__icon"><span></span><span></span><span></span></div><a href="http://"
+                          target="_blank" class="menu__item">Anatomy</a><a href="http://" target="_blank"
+                          class="menu__item">Ecology</a><a href="http://" target="_blank"
+                          class="menu__item">Intelligence</a><a href="http://" target="_blank"
+                          class="menu__item">Mythology</a>
+                      </div>
+                    </div>
+                    <div class="header-in-card__share-and-like">
+                      <div class="share-block">
+                        <div class="share-block__share-icon">
+                          <span></span><span></span><span></span><span></span><span></span></div>
+                        <div class="share-block__facebook-icon"></div>
+                        <div class="share-block__twitter-icon"></div>
+                      </div>
+                      <div class="like-block">
+                        <div class="like-block__like-icon"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card__body">
+                  <h1 class="card-title">Cats</h1>
+                  <div class="card-meta">
+                    <div class="card-meta__title">Tags</div>
+                    <div class="card-meta__line"></div>
+                    <div class="card-meta__quantity">99.998 images</div>
+                  </div>
+                  <div class="card-tags"><a href="#" target="_blank" class="card-tags__item">Animals</a><a href="#"
+                      target="_blank" class="card-tags__item">Cat</a><a href="#" target="_blank"
+                      class="card-tags__item">Smiling</a><a href="#" target="_blank"
+                      class="card-tags__item">Fluffy</a><a href="#" target="_blank" class="card-tags__item">Awesome</a>
+                  </div>
+                </div><img src="https://i.postimg.cc/QtwSMS1y/cats.png" alt="" class="card__image">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+
+
+
+
+
+    <script src="js/char.js"></script>
+    <script src="js/nav.js"></script>
+  </main>
+
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous">
+  </script>
+
 </body>
+
 </html>
