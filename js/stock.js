@@ -70,7 +70,7 @@ function login() {
                 alert("Contraseña incorrecta")
             } else {
                 alert(`Acceso permitido`)
-                logCheck = true
+                opUser = stock()
             }
         }
     }
@@ -89,7 +89,6 @@ function menu() {
         switch (opselec) {
             case 1:
                 opselec = login()
-                // opUser = stock()
                 break
 
             case 2:
@@ -134,16 +133,6 @@ function leerStock(objeto) {
 
 function buscarArt() {
     opcion = buscarObj()
-
-    // let inv = []
-    // let findd = inventario.find(i => i.id === opcion)
-    // inv = findd
-
-
-    // for (let inver of inventario) {
-    //     inv = inver
-    // }
-
 
     for (let inv of inventario) {
         if (opcion === inv.id) {
@@ -262,9 +251,7 @@ function stock() {
 
 
 function main() {
-    opUser = menu()
-    stock()
-
+    menu()
 }
 
 main()
