@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Combo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
 /* main {
     	@include box-flex(center, center, column)
 	} */
@@ -43,7 +44,7 @@ nav ul li a {
   font-family: "Bungee Spice", cursive;
   font-size: 2.5rem !important;
   padding-right: 30px !important;
-  transition: 0.3s !important;
+  transition: 0.2s !important;
 }
 nav ul li a:hover {
   font-size: 2.6rem !important;
@@ -61,13 +62,14 @@ nav ul li a:hover {
   width: 100%;
   background-color: black;
   padding-top: 70px;
-  padding-bottom: 300px;
+  padding-bottom: 500px;
 }
 .pjs h1 {
   font-size: 6rem;
-  font-family: "Combo", cursive;
   color: #0b8062;
-  font-weight: 700;
+  font-weight: 600;
+  font-family: "Combo", cursive;
+  margin-bottom: 10px;
 }
 
 .peluca {
@@ -84,9 +86,9 @@ nav ul li a:hover {
 }
 
 .sape {
-  width: 400px;
+  width: 1000px;
   position: absolute;
-  top: -50;
+  top: 15;
   left: 0;
   right: 0;
   margin: 0 auto;
@@ -102,8 +104,90 @@ nav ul li a:hover {
   font-family: "Combo", cursive;
   color: #8758FF;
   font-weight: 800;
-  background-color: rgba(34, 40, 49, 0.8);
-  border-radius: 60px;
+}
+
+.pjs h2 {
+  font-family: "Bungee Spice", cursive;
+  font-size: 4rem;
+  margin-top: 5px;
+  text-align: center;
+}
+.pjs h3 {
+  font-size: 2.5rem;
+  color: #FD7014;
+  text-align: right;
+  font-family: "Satisfy", cursive;
+}
+.pjs p {
+  font-family: "Combo", cursive;
+  color: #0b8062;
+  margin-top: 10px;
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  margin-left: 10px;
+  margin-bottom: 50px;
+}
+
+.product-card {
+  background-color: #222831;
+  width: 600px;
+  min-height: 400px;
+  margin: auto;
+  border-radius: 40px;
+  text-align: left;
+  position: relative;
+}
+
+.product-details {
+  width: 80%;
+  padding: 10px;
+}
+
+.product-image {
+  position: absolute;
+  right: -160px;
+  top: -30px;
+}
+.product-image img {
+  width: 300px;
+}
+
+@media (max-width: 700px) {
+  .product-card {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+@media (max-width: 540px) {
+  .product-card {
+    overflow: hidden;
+    margin-bottom: 50px;
+  }
+  .product-details {
+    width: 60%;
+    z-index: 1;
+  }
+  .product-image {
+    width: 100%;
+    left: 40%;
+    top: -50px;
+  }
+}
+@media (max-width: 440px) {
+  .product-details {
+    width: 65%;
+  }
+}
+@media (max-width: 365px) {
+  .product-details {
+    width: 80%;
+    position: relative;
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.7);
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
