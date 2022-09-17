@@ -50,11 +50,12 @@ function validNew(event) {
     let edad = parseInt(inEdad.value)
     let mail = inMail.value
 
+    const valUser = cuentas.some((cuentas) => cuentas.user === user)
     const valMail = cuentas.some((cuentas) => cuentas.mail === mail)
-    if (valMail) {
+    if (valMail || valUser) {
         let cartel = document.createElement("div")
         cartel.className = "alert"
-        cartel.innerHTML = "<h3> E-mail ya registrado, intente con otro </h3>"
+        cartel.innerHTML = "<h3> E-mail o usuario registrado, intente con otro </h3>"
         cartelLog.append(cartel)
         setTimeout(function () {
             cartel.style.display = "none"

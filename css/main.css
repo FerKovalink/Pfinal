@@ -157,40 +157,26 @@ nav ul li a:hover, nav ul li a:focus {
   width: 300px;
 }
 
-@media (max-width: 700px) {
-  .product-card {
-    margin-left: 20px;
-    margin-right: 20px;
-  }
+.mapa {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  background-color: #171717;
 }
-@media (max-width: 540px) {
-  .product-card {
-    overflow: hidden;
-    margin-bottom: 50px;
-  }
-  .product-details {
-    width: 60%;
-    z-index: 1;
-  }
-  .product-image {
-    width: 100%;
-    left: 40%;
-    top: -50px;
-  }
+.mapa video {
+  width: 1280px;
+  height: 720px;
+  border-radius: 60px;
+  margin-bottom: 50px;
 }
-@media (max-width: 440px) {
-  .product-details {
-    width: 65%;
-  }
+.mapa h4 {
+  font-family: "Bungee Spice", cursive;
+  font-size: 5rem;
+  padding: 1%;
 }
-@media (max-width: 365px) {
-  .product-details {
-    width: 80%;
-    position: relative;
-    color: #333;
-    background-color: rgba(255, 255, 255, 0.7);
-  }
-}
+
 main {
   background-color: #171717;
 }

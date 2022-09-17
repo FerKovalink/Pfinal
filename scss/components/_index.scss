@@ -76,8 +76,6 @@ nav {
   }
 }
 
-footer {}
-
 .pjs {
 
   h2 {
@@ -134,42 +132,21 @@ footer {}
   }
 }
 
-@media (max-width: 700px) {
-  .product-card {
-    margin-left: 20px;
-    margin-right: 20px;
-  }
-}
+.mapa{
+  @include box-flex(center, center, column);
+  width: 100%;
+  background-color: map-get($map: $color, $key:'negro');
 
-@media (max-width: 540px) {
-  .product-card {
-    overflow: hidden;
+  video{
+    width: 1280px;
+    height: 720px;
+    border-radius: 60px;
     margin-bottom: 50px;
   }
 
-  .product-details {
-    width: 60%;
-    z-index: 1;
-  }
-
-  .product-image {
-    width: 100%;
-    left: 40%;
-    top: -50px;
-  }
-}
-
-@media (max-width: 440px) {
-  .product-details {
-    width: 65%;
-  }
-}
-
-@media (max-width: 365px) {
-  .product-details {
-    width: 80%;
-    position: relative;
-    color: #333;
-    background-color: rgba(255, 255, 255, 0.7);
+  h4{
+    font-family: map-get($map: $fonts, $key:'nav');
+    font-size: 5rem;
+    padding: 1%;
   }
 }
