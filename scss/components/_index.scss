@@ -1,5 +1,5 @@
 nav {
-  background: map-get($map: $color, $key: "negro");
+  background: map-get($map: $color, $key: "gris");
 
   ul {
     li {
@@ -7,9 +7,10 @@ nav {
         font-family: map-get($map: $fonts, $key:"nav");
         font-size: 2.5rem !important;
         padding-right: 30px !important;
-        transition: 0.2s !important;
+        transition: 0.3s !important;
 
-        &:hover {
+        &:hover,
+        &:focus {
           font-size: 2.6rem !important;
         }
       }
@@ -38,8 +39,6 @@ nav {
     font-weight: 600;
     font-family: map-get($map: $fonts, $key: "combo");
     margin-bottom: 10px;
-
-
   }
 }
 
@@ -49,10 +48,8 @@ nav {
   position: relative;
   width: 100%;
 
-
   img {
     width: 100%;
-
   }
 }
 
@@ -77,12 +74,9 @@ nav {
     color: map-get($map: $color, $key: "violeta");
     font-weight: 800;
   }
-
-
 }
 
 footer {}
-
 
 .pjs {
 
@@ -93,14 +87,14 @@ footer {}
     text-align: center;
   }
 
-  h3{
+  h3 {
     font-size: 2.5rem;
     color: map-get($map: $color, $key:'naranja');
     text-align: right;
-    font-family: map-get($map: $fonts, $key:'sa' );
+    font-family: map-get($map: $fonts, $key:'sa');
   }
 
-  p{
+  p {
     font-family: map-get($map: $fonts, $key:'combo');
     color: map-get($map: $color, $key: 'verde');
     margin-top: 10px;
@@ -109,13 +103,11 @@ footer {}
     text-align: center;
     padding: 20px;
     border-radius: 10px;
-    margin-left: 10px ;
+    margin-left: 10px;
     margin-bottom: 50px;
-
-   }
+  }
 
 }
-
 
 .product-card {
   background-color: map-get($map: $color, $key:'negro');
@@ -130,7 +122,6 @@ footer {}
 .product-details {
   width: 80%;
   padding: 10px;
-
 }
 
 .product-image {
@@ -148,7 +139,6 @@ footer {}
     margin-left: 20px;
     margin-right: 20px;
   }
-
 }
 
 @media (max-width: 540px) {

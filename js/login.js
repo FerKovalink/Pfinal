@@ -37,7 +37,6 @@ function initEvents() {
     formNew.onsubmit = (event) => validNew(event)
 }
 
-
 function validNew(event) {
     event.preventDefault()
     let user = inUser.value
@@ -69,8 +68,6 @@ function validNew(event) {
         setTimeout(function () {
             cartel.style.display = "none"
         }, 2000)
-
-
     }
 }
 
@@ -81,6 +78,7 @@ function validLog(event) {
 
     const valUser = cuentas.some((cuentas) => cuentas.user === user)
     const valPass = cuentas.some((cuentas) => cuentas.pass === pass)
+
     if (valUser && valPass) {
         let cartel = document.createElement("div")
         cartel.className = "alert"
@@ -97,9 +95,8 @@ function validLog(event) {
         setTimeout(function () {
             cartel.style.display = "none"
         }, 2000)
-    }
+    }    
 }
-
 
 function main() {
     initElements()

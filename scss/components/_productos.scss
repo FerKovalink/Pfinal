@@ -5,8 +5,6 @@ main {
 .ingreso {
     @include box-flex(center, flex-start, row);
     margin-top: 10px;
-
-
 }
 
 .login {
@@ -14,49 +12,50 @@ main {
 
     h2 {
         color: white;
-        margin-bottom: 10px;
-        font-family: map-get($map: $fonts, $key:'nav');
-
-        
+        margin-bottom: 20px;
+        font-size: 2.5rem;
+        font-family: map-get($map: $fonts, $key:'nav');        
     }
 
     label {
         color: white;
-        font-size: 1.5rem;
+        font-size: 1.2rem;
+        font-family: map-get($map: $fonts, $key:'bit');
     }
 
     input {
         font-size: 1.3rem;
     }
-
 }
 
 .registro {
 
     h2 {
         color: white;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
+        font-size: 2.5rem;
         font-family: map-get($map: $fonts, $key:'nav');
-
     }
 
     label {
         color: white;
-        font-size: 1.3rem;
+        font-size: 1.2rem;
+        font-family: map-get($map: $fonts, $key:'bit');
     }
 
     input {
         font-size: 1.3rem;
-        
     }
 }
-
 
 #cartelLog {
     margin-top: 5px;
 
     h3 {
         color: white;
+        font-family: map-get($map: $fonts, $key:'combo');
+        font-size: 3.5rem;
+        color: map-get($map: $color, $key:'verde');
     }
 }
 
@@ -64,6 +63,11 @@ main {
     background-color: map-get($map: $color, $key:'verde') !important;
     border-color: map-get($map: $color, $key:'verde') !important;
     font-family: map-get($map: $fonts, $key:'combo')!important;
-    font-size: 1.6rem !important;
+    font-size: 1.8rem !important;
+    margin-top: 5px;
+    margin-bottom: 10px;
 
+    &:hover{
+        background-color: map-get($map: $color, $key:'naranja') !important;
+    }
 }
