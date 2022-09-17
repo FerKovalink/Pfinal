@@ -195,6 +195,10 @@ main {
   background-color: #171717;
 }
 
+.banner img {
+  width: 100%;
+}
+
 .ingreso {
   display: flex !important;
   justify-content: center;

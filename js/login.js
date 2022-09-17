@@ -2,7 +2,9 @@ let cuentas = []
 let formLogin
 let formNew
 let inUser
+let outUser
 let inPass
+let outPass
 let inNombre
 let inApellido
 let inEdad
@@ -24,7 +26,9 @@ function initElements() {
     formLogin = document.getElementById('formLogin')
     formNew = document.getElementById('formNew')
     inUser = document.getElementById('inUser')
+    outUser = document.getElementById('outUser')
     inPass = document.getElementById('inPass')
+    outPass = document.getElementById('outPass')
     inNombre = document.getElementById('inNombre')
     inApellido = document.getElementById('inApellido')
     inEdad = document.getElementById('inEdad')
@@ -73,8 +77,8 @@ function validNew(event) {
 
 function validLog(event) {
     event.preventDefault()
-    let user = inUser.value
-    let pass = inPass.value
+    let user = outUser.value
+    let pass = outPass.value
 
     const valUser = cuentas.some((cuentas) => cuentas.user === user)
     const valPass = cuentas.some((cuentas) => cuentas.pass === pass)
@@ -82,7 +86,7 @@ function validLog(event) {
     if (valUser && valPass) {
         let cartel = document.createElement("div")
         cartel.className = "alert"
-        cartel.innerHTML = `<h3> Bienvenido ${cuentas.user} </h3>`
+        cartel.innerHTML = `<h3> Bienvenido ${user} </h3>`
         cartelLog.append(cartel)
         setTimeout(function () {
             cartel.style.display = "none"

@@ -2,6 +2,12 @@ main {
     background-color: map-get($map: $color, $key:'negro');
 }
 
+.banner{
+    img{
+        width: 100%
+    }
+}
+
 .ingreso {
     @include box-flex(center, flex-start, row);
     margin-top: 10px;
