@@ -1,5 +1,5 @@
 main {
-    background-color: black;
+    background-color: map-get($map: $color, $key:'negro');
 }
 
 .ingreso {
@@ -15,12 +15,14 @@ main {
     h2 {
         color: white;
         margin-bottom: 10px;
+        font-family: map-get($map: $fonts, $key:'nav');
+
         
     }
 
     label {
         color: white;
-        font-size: 1.3rem;
+        font-size: 1.5rem;
     }
 
     input {
@@ -34,19 +36,21 @@ main {
     h2 {
         color: white;
         margin-bottom: 10px;
+        font-family: map-get($map: $fonts, $key:'nav');
+
     }
 
     label {
         color: white;
         font-size: 1.3rem;
     }
-    
+
     input {
         font-size: 1.3rem;
+        
     }
 }
 
-.banner {}
 
 #cartelLog {
     margin-top: 5px;
@@ -54,4 +58,12 @@ main {
     h3 {
         color: white;
     }
+}
+
+.btn-primary{
+    background-color: map-get($map: $color, $key:'verde') !important;
+    border-color: map-get($map: $color, $key:'verde') !important;
+    font-family: map-get($map: $fonts, $key:'combo')!important;
+    font-size: 1.6rem !important;
+
 }
