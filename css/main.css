@@ -222,7 +222,8 @@ main {
   font-family: "Press Start 2P", cursive;
 }
 .login input {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
+  font-weight: 500;
 }
 
 .registro h2 {
@@ -237,7 +238,8 @@ main {
   font-family: "Press Start 2P", cursive;
 }
 .registro input {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
+  font-weight: 500;
 }
 
 #cartelLog {
