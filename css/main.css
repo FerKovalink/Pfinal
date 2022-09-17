@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Combo&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
 /* main {
     	@include box-flex(center, center, column)
 	} */
@@ -116,7 +115,6 @@ nav ul li a:hover {
   font-size: 2.5rem;
   color: #FD7014;
   text-align: right;
-  font-family: "Satisfy", cursive;
 }
 .pjs p {
   font-family: "Combo", cursive;
@@ -188,6 +186,51 @@ nav ul li a:hover {
     color: #333;
     background-color: rgba(255, 255, 255, 0.7);
   }
+}
+main {
+  background-color: black;
+}
+
+.ingreso {
+  display: flex !important;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: row;
+  margin-top: 10px;
+}
+
+.login {
+  margin-right: 300px;
+}
+.login h2 {
+  color: white;
+  margin-bottom: 10px;
+}
+.login label {
+  color: white;
+  font-size: 1.3rem;
+}
+.login input {
+  font-size: 1.3rem;
+}
+
+.registro h2 {
+  color: white;
+  margin-bottom: 10px;
+}
+.registro label {
+  color: white;
+  font-size: 1.3rem;
+}
+.registro input {
+  font-size: 1.3rem;
+}
+
+#cartelLog {
+  margin-top: 5px;
+}
+#cartelLog h3 {
+  color: white;
 }
 
 /*# sourceMappingURL=main.css.map */

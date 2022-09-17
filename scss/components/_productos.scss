@@ -1,0 +1,57 @@
+main {
+    background-color: black;
+}
+
+.ingreso {
+    @include box-flex(center, flex-start, row);
+    margin-top: 10px;
+
+
+}
+
+.login {
+    margin-right: 300px;
+
+    h2 {
+        color: white;
+        margin-bottom: 10px;
+        
+    }
+
+    label {
+        color: white;
+        font-size: 1.3rem;
+    }
+
+    input {
+        font-size: 1.3rem;
+    }
+
+}
+
+.registro {
+
+    h2 {
+        color: white;
+        margin-bottom: 10px;
+    }
+
+    label {
+        color: white;
+        font-size: 1.3rem;
+    }
+    
+    input {
+        font-size: 1.3rem;
+    }
+}
+
+.banner {}
+
+#cartelLog {
+    margin-top: 5px;
+
+    h3 {
+        color: white;
+    }
+}

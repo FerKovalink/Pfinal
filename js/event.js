@@ -142,8 +142,8 @@ function validarFormulario(event) {
 
     productos.push(producto);
     formulario.reset();
-
     pintarProductos();
+    
   } else {
     alert("El id ya existe");
   }
