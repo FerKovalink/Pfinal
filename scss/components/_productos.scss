@@ -64,6 +64,7 @@ main {
         font-family: map-get($map: $fonts, $key:'combo');
         font-size: 3.5rem;
         color: map-get($map: $color, $key:'verde');
+        font-weight: 600;
     }
 }
 
