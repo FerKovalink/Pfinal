@@ -10,6 +10,7 @@ let inApellido
 let inEdad
 let inMail
 let cartelLog
+let nuevo
 
 class Login {
     constructor(user, pass, nombre, apellido, edad, mail) {
@@ -34,11 +35,13 @@ function initElements() {
     inEdad = document.getElementById('inEdad')
     inMail = document.getElementById('inMail')
     cartelLog = document.getElementById('cartelLog')
+    nuevo = document.getElementById('nuevo')
 }
 
 function initEvents() {
     formLogin.onsubmit = (event) => validLog(event)
     formNew.onsubmit = (event) => validNew(event)
+    //nuevo.onclick = (event) => mostrarRegistro(event)
 }
 
 function cartel(mensaje){
@@ -50,6 +53,23 @@ function cartel(mensaje){
             cartel.style.display = "none"
         }, 2000)
  }
+
+function mostrarStock(){
+
+}
+
+function mostrarRegistro(){
+    
+    registro.onclick = () => {
+        const registro = document.createElement("div")
+        registro.className = "alert"
+        registro.innerHTML = `<h3> ${mensaje} </h3>`
+        cartelLog.append(cartel)
+        
+        cartel.style.display = "none"
+       
+    }
+}
 
 function validNew(event) {
     event.preventDefault()
@@ -84,6 +104,7 @@ function validLog(event) {
 
     if (valUser && valPass) {
         cartel(`Bienvenido ${user}`)
+        mostrarStock()
     } else {
         cartel("Datos incorrectos")
     }    
