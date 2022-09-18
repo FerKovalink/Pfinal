@@ -41,6 +41,16 @@ function initEvents() {
     formNew.onsubmit = (event) => validNew(event)
 }
 
+function cartel(mensaje){
+    const cartel = document.createElement("div")
+        cartel.className = "alert"
+        cartel.innerHTML = `<h3> ${mensaje} </h3>`
+        cartelLog.append(cartel)
+        setTimeout(function () {
+            cartel.style.display = "none"
+        }, 2000)
+ }
+
 function validNew(event) {
     event.preventDefault()
     let user = inUser.value
@@ -50,29 +60,17 @@ function validNew(event) {
     let edad = parseInt(inEdad.value)
     let mail = inMail.value
 
-    const valUser = cuentas.some((cuentas) => cuentas.user === user)
-    const valMail = cuentas.some((cuentas) => cuentas.mail === mail)
+    const valUser = cuentas.some((cuenta) => cuenta.user === user)
+    const valMail = cuentas.some((cuenta) => cuenta.mail === mail)
     if (valMail || valUser) {
-        let cartel = document.createElement("div")
-        cartel.className = "alert"
-        cartel.innerHTML = "<h3> E-mail o usuario registrado, intente con otro </h3>"
-        cartelLog.append(cartel)
-        setTimeout(function () {
-            cartel.style.display = "none"
-        }, 2000)
+        cartel("E-mail o usuario registrado, intente con otro")
     } else {
         let nuevoUser = new Login(user, pass, nombre, apellido, edad, mail)
 
         cuentas.push(nuevoUser)
         formNew.reset()
 
-        let cartel = document.createElement("div")
-        cartel.className = "alert"
-        cartel.innerHTML = "<h3> Cuenta creada </h3>"
-        cartelLog.append(cartel)
-        setTimeout(function () {
-            cartel.style.display = "none"
-        }, 2000)
+        cartel("Cuenta creada")
     }
 }
 
@@ -85,21 +83,9 @@ function validLog(event) {
     const valPass = cuentas.some((cuentas) => cuentas.pass === pass)
 
     if (valUser && valPass) {
-        let cartel = document.createElement("div")
-        cartel.className = "alert"
-        cartel.innerHTML = `<h3> Bienvenido ${user} </h3>`
-        cartelLog.append(cartel)
-        setTimeout(function () {
-            cartel.style.display = "none"
-        }, 2000)
+        cartel(`Bienvenido ${user}`)
     } else {
-        let cartel = document.createElement("div")
-        cartel.className = "alert"
-        cartel.innerHTML = `<h3> Datos incorrectos </h3>`
-        cartelLog.append(cartel)
-        setTimeout(function () {
-            cartel.style.display = "none"
-        }, 2000)
+        cartel("Datos incorrectos")
     }    
 }
 
