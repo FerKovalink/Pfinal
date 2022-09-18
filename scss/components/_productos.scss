@@ -60,7 +60,6 @@ main {
     margin-top: 5px;
 
     h3 {
-        color: white;
         font-family: map-get($map: $fonts, $key:'combo');
         font-size: 3.5rem;
         color: map-get($map: $color, $key:'verde');
