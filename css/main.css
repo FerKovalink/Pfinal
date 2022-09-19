@@ -213,18 +213,18 @@ main {
   font-weight: 500;
 }
 
-.registro h2 {
+.registro h2, .productos h2 {
   color: white;
   margin-bottom: 20px;
   font-size: 2.5rem;
   font-family: "Bungee Spice", cursive;
 }
-.registro label {
+.registro label, .productos label {
   color: white;
   font-size: 1.2rem;
   font-family: "Press Start 2P", cursive;
 }
-.registro input {
+.registro input, .productos input {
   font-size: 1.5rem;
   font-weight: 500;
 }
@@ -240,7 +240,7 @@ main {
   font-weight: 600;
 }
 
-.btn-primary, #btnForm {
+.btn-primary {
   background-color: #0b8062 !important;
   border-color: #0b8062 !important;
   font-family: "Combo", cursive !important;
@@ -248,8 +248,12 @@ main {
   margin-top: 5px;
   margin-bottom: 10px;
 }
-.btn-primary:hover, #btnForm:hover {
+.btn-primary:hover {
   background-color: #FD7014 !important;
+}
+
+.productos {
+  width: 100%;
 }
 
 /*# sourceMappingURL=main.css.map */

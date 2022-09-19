@@ -10,8 +10,6 @@ let inApellido
 let inEdad
 let inMail
 let cartelLog
-let btnForm
-let registro
 
 class Login {
     constructor(user, pass, nombre, apellido, edad, mail) {
@@ -36,70 +34,11 @@ function initElements() {
     inEdad = document.getElementById('inEdad')
     inMail = document.getElementById('inMail')
     cartelLog = document.getElementById('cartelLog')
-    btnForm = document.getElementById('btnForm')
-    registro = document.getElementById('registro')
 }
 
 function initEvents() {
     formLogin.onsubmit = (event) => validLog(event)
     formNew.onsubmit = (event) => validNew(event)
-    
-}
-
-function mostrarForm() {
-    
-    const formulario = document.createElement("div")
-    formulario.class = "formulario"
-    formulario.innerHTML = `<form id="formNew">
-    <div class="mb-4">
-        <label class="form-label">Usuario</label>
-        <input type="text" class="form-control" id="inUser" required minlength="3"/>
-    </div>
-
-    <div class="mb-4">
-        <label class="form-label">Contraseña</label>
-        <input type="password" class="form-control" id="inPass" required minlength="3"/>
-    </div>
-
-    <div class="mb-4">
-        <label class="form-label">Nombre</label>
-        <input type="text" class="form-control" id="inNombre" required minlength="3"/>
-    </div>
-
-    <div class="mb-4">
-        <label class="form-label">Apellido</label>
-        <input type="text" class="form-control" id="inApellido" required minlength="3"/>
-    </div>
-
-    <div class="mb-4">
-        <label class="form-label">Edad</label>
-        <input type="number" class="form-control" id="inEdad" />
-    </div>
-
-    <div class="mb-4">
-        <label class="form-label">E-mail</label>
-        <input type="email" class="form-control" id="inMail" />
-    </div>
-
-    <div class="mb-4">
-        <button type="submit" class="btn btn-primary">Registrarme</button>
-        
-
-    </div>
-</form>`
-
-    registro.append(formulario)
-    btnForm.style.display = "none"
-}
-
-function cartel(mensaje) {
-    const cartel = document.createElement("div")
-    cartel.className = "alert"
-    cartel.innerHTML = `<h3> ${mensaje} </h3>`
-    cartelLog.append(cartel)
-    setTimeout(function () {
-        cartel.style.display = "none"
-    }, 2000)
 }
 
 function validNew(event) {
@@ -111,17 +50,29 @@ function validNew(event) {
     let edad = parseInt(inEdad.value)
     let mail = inMail.value
 
-    const valUser = cuentas.some((cuenta) => cuenta.user === user)
-    const valMail = cuentas.some((cuenta) => cuenta.mail === mail)
+    const valUser = cuentas.some((cuentas) => cuentas.user === user)
+    const valMail = cuentas.some((cuentas) => cuentas.mail === mail)
     if (valMail || valUser) {
-        cartel("E-mail o usuario registrado, intente con otro")
+        let cartel = document.createElement("div")
+        cartel.className = "alert"
+        cartel.innerHTML = "<h3> E-mail o usuario registrado, intente con otro </h3>"
+        cartelLog.append(cartel)
+        setTimeout(function () {
+            cartel.style.display = "none"
+        }, 2000)
     } else {
         let nuevoUser = new Login(user, pass, nombre, apellido, edad, mail)
 
         cuentas.push(nuevoUser)
         formNew.reset()
 
-        cartel("Cuenta creada")
+        let cartel = document.createElement("div")
+        cartel.className = "alert"
+        cartel.innerHTML = "<h3> Cuenta creada </h3>"
+        cartelLog.append(cartel)
+        setTimeout(function () {
+            cartel.style.display = "none"
+        }, 2000)
     }
 }
 
@@ -134,10 +85,22 @@ function validLog(event) {
     const valPass = cuentas.some((cuentas) => cuentas.pass === pass)
 
     if (valUser && valPass) {
-        cartel(`Bienvenido ${user}`)
+        let cartel = document.createElement("div")
+        cartel.className = "alert"
+        cartel.innerHTML = `<h3> Bienvenido ${user} </h3>`
+        cartelLog.append(cartel)
+        setTimeout(function () {
+            cartel.style.display = "none"
+        }, 2000)
     } else {
-        cartel("Datos incorrectos")
-    }
+        let cartel = document.createElement("div")
+        cartel.className = "alert"
+        cartel.innerHTML = `<h3> Datos incorrectos </h3>`
+        cartelLog.append(cartel)
+        setTimeout(function () {
+            cartel.style.display = "none"
+        }, 2000)
+    }    
 }
 
 function main() {

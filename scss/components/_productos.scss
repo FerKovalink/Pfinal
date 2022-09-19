@@ -44,10 +44,6 @@ main {
         font-family: map-get($map: $fonts, $key:'nav');
     }
 
-    h3{
-        
-    }
-
     label {
         color: white;
         font-size: 1.2rem;
@@ -59,6 +55,7 @@ main {
         font-weight: 500;
     }
 }
+
 
 #cartelLog {
     margin-top: 5px;
@@ -85,6 +82,7 @@ main {
     }
 }
 
-#btnForm{
-    @extend .btn-primary;
+.productos{
+    @extend .registro;
+    width: 100%;
 }
