@@ -240,7 +240,7 @@ main {
   font-weight: 600;
 }
 
-.btn-primary {
+.btn-primary, #btnForm {
   background-color: #0b8062 !important;
   border-color: #0b8062 !important;
   font-family: "Combo", cursive !important;
@@ -248,7 +248,7 @@ main {
   margin-top: 5px;
   margin-bottom: 10px;
 }
-.btn-primary:hover {
+.btn-primary:hover, #btnForm:hover {
   background-color: #FD7014 !important;
 }
 
