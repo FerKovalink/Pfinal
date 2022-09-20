@@ -4,7 +4,8 @@ let inId = 0
 let inNombre
 let inCantidad
 let inPrecio
-// let inImg
+let inImg
+let seeStock
 
 class Stock {
     constructor(id, nombre, cantidad, precio) {
@@ -12,7 +13,7 @@ class Stock {
         this.nombre = nombre
         this.cantidad = cantidad
         this.precio = precio
-        // this.img = img
+        this.img = img
     }
     precioMas = (precio) => (this.precio += precio)
     precioMenos = (precio) => (this.precio -= precio)
@@ -26,7 +27,8 @@ function initElements() {
     inNombre = document.getElementById('inNombre')
     inCantidad = document.getElementById('inCantidad')
     inPrecio = document.getElementById('inPrecio')
-    //inImg = document.getElementById('inImg')
+    inImg = document.getElementById('inImg')
+    seeStock = document.getElementById("seeStock")
 }
 
 function initEvents() {
@@ -56,9 +58,9 @@ function validStock(event) {
     let nombre = inNombre.value
     let cantidad = parseInt(inCantidad.value)
     let precio = parseFloat(inPrecio.value)
-    //let img = inImg.value
+    let img = inImg.value
 
-    //const matchId = inventario.some((articulo) => articulo.id === id)
+    const matchId = inventario.some((articulo) => articulo.id === id)
     const matchNombre = inventario.some((articulo) => articulo.nombre === nombre)
 
     if (matchNombre) {
