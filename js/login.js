@@ -14,7 +14,6 @@ let btnForm
 let formArt
 let cuentasUser
 
-
 class Login {
     constructor(user, pass, nombre, apellido, edad, mail) {
         this.user = user.toLowerCase()
@@ -46,6 +45,7 @@ function initElements() {
 function initEvents() {
     formLogin.onsubmit = (event) => validLog(event)
     formNew.onsubmit = (event) => validNew(event)
+    btnForm.onclick = mostrarForm
 }
 
 function mostrarForm() {

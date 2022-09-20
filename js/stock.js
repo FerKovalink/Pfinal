@@ -4,7 +4,7 @@ let inId = 0
 let inNombre
 let inCantidad
 let inPrecio
-let inImg
+// let inImg
 
 class Stock {
     constructor(id, nombre, cantidad, precio) {
@@ -12,7 +12,7 @@ class Stock {
         this.nombre = nombre
         this.cantidad = cantidad
         this.precio = precio
-        this.img = img
+        // this.img = img
     }
     precioMas = (precio) => (this.precio += precio)
     precioMenos = (precio) => (this.precio -= precio)
@@ -71,4 +71,54 @@ function validStock(event) {
         cartel("Producto agregado")
     }
 }
+
+function eliminarProducto(idProducto) {
+    let columnaBorrar = document.getElementById(`columna-${idProducto}`);
+    let indiceBorrar = productos.findIndex(
+      (producto) => Number(producto.id) === Number(idProducto)
+    );
+  
+    productos.splice(indiceBorrar, 1);
+    columnaBorrar.remove();
+  }
+
+  function pintarProductos() {
+    contenedorProductos.innerHTML = "";
+    productos.forEach((producto) => {
+      let column = document.createElement("div");
+      column.className = "col-md-4 mt-3";
+      column.id = `columna-${producto.id}`;
+      column.innerHTML = `
+              <div class="card">
+                  <div class="card-body">
+                  <p class="card-text">ID:
+                      <b>${producto.id}</b>
+                  </p>
+                  <p class="card-text">Nombre:
+                      <b>${producto.nombre}</b>
+                  </p>
+                  <p class="card-text">Precio compra:
+                      <b>${producto.precioCompra}</b>
+                  </p>
+                  <p class="card-text">Precio venta:
+                      <b>${producto.precioVenta}</b>
+                  </p>
+                  <p class="card-text">Cantidad:
+                      <b>${producto.cantidad}</b>
+                  </p>
+                  </div>
+                  <div class="card-footer">
+                      <button class="btn btn-danger" id="botonEliminar-${producto.id}" >Eliminar</button>
+                  </div>
+              </div>`;
+  
+      contenedorProductos.append(column);
+  
+      let botonEliminar = document.getElementById(`botonEliminar-${producto.id}`);
+      botonEliminar.onclick = () => eliminarProducto(producto.id);
+    });
+  }
+  
+
+
 
