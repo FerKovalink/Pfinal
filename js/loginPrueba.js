@@ -11,7 +11,9 @@ let inEdad
 let inMail
 let cartelLog
 let btnForm
-let registro
+let formArt
+let cuentasUser
+
 
 class Login {
     constructor(user, pass, nombre, apellido, edad, mail) {
@@ -37,7 +39,8 @@ function initElements() {
     inMail = document.getElementById('inMail')
     cartelLog = document.getElementById('cartelLog')
     btnForm = document.getElementById('btnForm')
-    registro = document.getElementById('registro')
+    formArt = document.getElementById('formArt')
+    cuentasUser = document.getElementById('cuentasUser')
 }
 
 function initEvents() {
@@ -46,47 +49,8 @@ function initEvents() {
 }
 
 function mostrarForm() {
-
-    const formulario = document.createElement("div")
-    formulario.class = "formulario"
-    formulario.innerHTML = `<form id="formNew">
-    <div class="mb-4">
-        <label class="form-label">Usuario</label>
-        <input type="text" class="form-control" id="inUser" required minlength="3"/>
-    </div>
-
-    <div class="mb-4">
-        <label class="form-label">Contraseña</label>
-        <input type="password" class="form-control" id="inPass" required minlength="3"/>
-    </div>
-
-    <div class="mb-4">
-        <label class="form-label">Nombre</label>
-        <input type="text" class="form-control" id="inNombre" required minlength="3"/>
-    </div>
-
-    <div class="mb-4">
-        <label class="form-label">Apellido</label>
-        <input type="text" class="form-control" id="inApellido" required minlength="3"/>
-    </div>
-
-    <div class="mb-4">
-        <label class="form-label">Edad</label>
-        <input type="number" class="form-control" id="inEdad" />
-    </div>
-
-    <div class="mb-4">
-        <label class="form-label">E-mail</label>
-        <input type="email" class="form-control" id="inMail" />
-    </div>
-
-    <div class="mb-4">
-        <button type="submit" class="btn btn-primary">Registrarme</button>
-    </div>
-</form>`
-
-    registro.append(formulario)
     btnForm.style.display = "none"
+    formNew.style.display = "block"
 }
 
 function cartel(mensaje) {
@@ -131,7 +95,12 @@ function validLog(event) {
     const valPass = cuentas.some((cuentas) => cuentas.pass === pass)
 
     if (valUser && valPass) {
-        cartel(`Bienvenido ${user}`)
+        const cartel = document.createElement("div")
+        cartel.className = "alert"
+        cartel.innerHTML = `<h3>Bienvenido ${user} </h3>`
+        cartelLog.append(cartel)
+        cuentasUser.style.display = "none"
+        formArt.style.display = "block"
     } else {
         cartel("Datos incorrectos")
     }
@@ -141,7 +110,6 @@ function validLog(event) {
 
 
 let productos = [];
-
 let formulario;
 let inputId;
 let inputNombre;

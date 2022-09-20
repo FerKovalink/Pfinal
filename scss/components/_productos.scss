@@ -56,6 +56,9 @@ main {
     }
 }
 
+#formNew{
+    display: none;
+}
 
 #cartelLog {
     margin-top: 5px;
@@ -82,7 +85,8 @@ main {
     }
 }
 
-.productos{
+#formArt{
     @extend .registro;
+    // display: none;
     width: 100%;
 }
