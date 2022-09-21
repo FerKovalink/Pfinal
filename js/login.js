@@ -11,6 +11,7 @@ let inEdad
 let inMail
 let cartelLog
 let btnForm
+let formArt
 let cuentasUser
 
 class Login {
@@ -37,6 +38,7 @@ function initElements() {
     inMail = document.getElementById('inMail')
     cartelLog = document.getElementById('cartelLog')
     btnForm = document.getElementById('btnForm')
+    formArt = document.getElementById('formArt')
     cuentasUser = document.getElementById('cuentasUser')
 }
 
@@ -95,9 +97,12 @@ function validLog(event) {
     const valPass = cuentas.some((cuentas) => cuentas.pass === pass)
 
     if (valUser && valPass) {
-        cartel(`Bienvenido ${user}`)
-        
-        
+        const cartel = document.createElement("div")
+        cartel.className = "alert"
+        cartel.innerHTML = `<h3>Bienvenido ${user} </h3>`
+        cartelLog.append(cartel)
+        cuentasUser.style.display = "none"
+        formPer.style.display = "block"
     } else {
         cartel("Datos incorrectos")
     }
@@ -105,16 +110,15 @@ function validLog(event) {
 
 function updateUser() {
     let userJSON = JSON.stringify(cuentas)
-    localStorage.setItem("usuarios", userJSON)
+    sessionStorage.setItem("usuarios", userJSON)
 }
 
 function getUser() {
-    let userJSON = localStorage.getItem("usuarios")
+    let userJSON = sessionStorage.getItem("usuarios")
     if (userJSON) {
         cuentas = JSON.parse(userJSON)
     }
 }
-
 
 function main() {
     initElements()

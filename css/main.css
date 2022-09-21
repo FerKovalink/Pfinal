@@ -149,7 +149,7 @@ nav ul li a:hover, nav ul li a:focus {
   flex-direction: column;
   background-color: #171717;
   width: 100%;
-  padding: 20px 0;
+  padding-top: 20px;
 }
 
 .parallax {
@@ -223,6 +223,7 @@ nav ul li a:hover, nav ul li a:focus {
 #formPer {
   display: none;
   width: 100%;
+  padding-bottom: 20px;
 }
 #formPer img {
   width: 50%;
