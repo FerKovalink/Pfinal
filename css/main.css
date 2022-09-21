@@ -152,7 +152,7 @@ nav ul li a:hover, nav ul li a:focus {
 }
 
 .parallax {
-  background-image: url("../../img/ban3.jpg");
+  background-image: url("https://github.com/FerKovalink/d-d/blob/master/img/ban3.jpg?raw=true");
   width: 100%;
   background-attachment: fixed;
   background-position: center;

@@ -110,11 +110,11 @@ function validLog(event) {
 
 function updateUser() {
     let userJSON = JSON.stringify(cuentas)
-    sessionStorage.setItem("usuarios", userJSON)
+    localStorage.setItem("usuarios", userJSON)
 }
 
 function getUser() {
-    let userJSON = sessionStorage.getItem("usuarios")
+    let userJSON = localStorage.getItem("usuarios")
     if (userJSON) {
         cuentas = JSON.parse(userJSON)
     }
