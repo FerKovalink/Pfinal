@@ -70,7 +70,7 @@ function cartelPjs(mensaje) {
 function mostrarPjs() {
     personajes.forEach((personaje) => {
         const card = document.createElement("div")
-        card.className = "carousel-item active"
+        card.className = "contenido"
         card.id = `card-${personaje.pj}`
         card.innerHTML = `
                 <div class="product-card">
@@ -130,7 +130,7 @@ function main() {
     iniciarElementos()
     iniciarEventos()
     getPjs()
-    armar()
+
     
 }
 

@@ -143,8 +143,8 @@
                 </div>
 
                 <div class="mb-4">
-                  <label class="form-label">Imagen</label>
-                  <input type="file" class="form-control" id="inImg">
+                  <label class="form-label">Inserte la URL de la imagen</label>
+                  <input type="text" class="form-control" id="inImg" minlength="10">
                 </div>
                 <div class="btnCartel">
                   <button type="submit" class="btn btn-primary">Crear personaje</button>
@@ -158,15 +158,17 @@
       </div>
 
       <div class="personajes">
-        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
 
           <div id="verPjs" class="carousel-inner"></div>
 
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
+            data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
           </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"
+            data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
           </button>

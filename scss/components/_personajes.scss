@@ -107,14 +107,16 @@
 
 .product-card {
     background-color: map-get($map: $color, $key:'negro');
-    width: 50%;
+    width: 450px;
     left: 14%;
     border-radius: 40px;
     position: relative;
+
+    
 }
 
 .product-details {
-    width: 80%;
+    width: 70%;
     padding: 10px;
 }
 
@@ -137,3 +139,4 @@
     background-image: url("https://github.com/FerKovalink/d-d/blob/master/img/index/ar.png?raw=true");
     background-position: center;
 }
+
