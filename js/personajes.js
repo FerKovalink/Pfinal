@@ -97,6 +97,7 @@ function delPj(pj) {
     personajes.splice(indexPj, 1)
     borrarPj.remove()
     updatePjs()
+    mostrarPjs()
 }
 
 function updatePjs() {
