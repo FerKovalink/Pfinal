@@ -121,7 +121,123 @@ function getUser() {
 }
 
 
+let personajes = []
+let formPer
+let formPjs
+let inPj
+let inRaza
+let inDes
+let inImg
+let verPjs
+let cartelPj
 
+class Personaje{
+    constructor(pj, raza, des, img){
+        this.pj = pj
+        this.raza = raza
+        this.des = des
+        this.img = img
+    }
+}
+
+function iniciarElementos(){
+    formPer = document.getElementById("formPer")
+    formPjs = document.getElementById("formPjs")
+    inPj = document.getElementById("inPj")
+    inRaza = document.getElementById("inRaza")
+    inDes = document.getElementById("inDes")
+    inImg = document.getElementById("inImg")
+    verPjs = document.getElementById("verPjs")
+    cartelPj = document.getElementById("cartelPj")
+}
+
+function iniciarEventos(){
+    formPjs.onsubmit = (event) => validPjs(event)
+}
+
+
+
+function validPjs(){
+    let pj = inPj.value.toLowerCase()
+    let raza = inRaza.value
+    let des = inDes.value
+    let img = inImg.value
+
+    const valPj = personajes.some((personaje) => personaje.pj === pj)
+
+    if(!valPj){
+        let nuevoPj = new Personaje(pj, raza, des, img)
+
+        personajes.push(nuevoPj)
+        formPjs.reset()
+        updatePjs()
+        mostrarPjs()
+
+    } else {
+        cartel("El nombre ya esta en uso, elije otro")
+    }
+
+}
+
+function cartelPjs(mensaje) {
+    const cartel = document.createElement("div")
+    cartel.className = "alert"
+    cartel.innerHTML = `<h3> ${mensaje} </h3>`
+    cartelPj.append(cartel)
+    setTimeout(function () {
+        cartel.style.display = "none"
+    }, 2000)
+}
+
+function delPj(personaje){
+    let borrarPj = document.createElementById(`card-${personaje}`)
+    let indexPj = personajes.findIndex((personaje) => personaje.pj === personaje)
+
+    personajes.splice(indexPj, 1)
+    borrarPj.remove()
+    // updatePjs()
+}
+
+function mostrarPjs(){
+    verPjs.innerHTML = ""
+    personajes.forEach((personaje) => {
+        let card = document.createElement("div")
+        card.className = "product-card"
+        card.id = `card-${personaje.pj}`
+        card.innerHTML = `
+                <div class="product-image">
+                  <img src="${personaje.img}">
+                </div>
+                <div class="product-details">
+                  <h2>${personaje.pj}</h2>
+                  <h3>${personaje.raza}</h3>
+                  <p>${personaje.des}</p>
+                </div>`
+        verPjs.append(card)
+
+        let btnDel = document.getElementsById(`btnDel-${personaje.pj}`)
+        btnDel.onclick = () => delPj(personaje.pj)
+    } )
+}
+
+// function updatePjs(){
+//     let pjJSON= JSON.stringify(personajes)
+//     localStorage.setItem("personajes", pjJSON)
+// }
+
+// function getPjs(){
+//     let pjJSON= localStorage.getItem("personajes")
+//     if(pjJSON){
+//         personajes.JSON.parse(pjJSON)
+//         mostrarPjs()
+//     }
+// }
+
+function delAll(){
+    localStorage.clear()
+    personajes = []
+    mostrarPjs()
+}
 
 
 
@@ -129,6 +245,10 @@ function main() {
     initElements()
     initEvents()
     getUser()
+
+    iniciarElementos()
+    iniciarEventos()
+    // getPjs()
 }
 
 main()

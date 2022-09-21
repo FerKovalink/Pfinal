@@ -114,63 +114,56 @@
             </div>
         </div>
 
-        <div id="formArt">
-            <div class="container p-3">
+        <div id="formPer">
+            <div class="container">
                 <div class="row">
+                    <img src="../img/pjs/pjs.png">
                     <div class="col-md-6">
-                        <div id="contenedorProductos" class="row"></div>
-                    </div>
-                    <div class="col-md-6">
-                        <h2>Ingreso de productos</h2>
-                        <form id="formulario">
-                            <div class="mb-3">
-                                <label class="form-label">ID</label>
-                                <input type="text" class="form-control" id="inputId" />
-                            </div>
-                            <div class="mb-3">
+                        <h2>Crea tu personaje</h2>
+                        <form id="formPjs">
+                            <div class="mb-4">
                                 <label class="form-label">Nombre</label>
-                                <input type="text" class="form-control" id="inputNombreProducto" />
+                                <input type="text" class="form-control" id="inPj" />
                             </div>
 
-                            <div class="mb-3">
-                                <label class="form-label">Precio venta</label>
-                                <input type="number" class="form-control" id="inputPrecioVenta" />
+                            <div class="mb-4">
+                                <label class="form-label">Raza</label>
+                                <input type="text" class="form-control" id="inRaza" />
                             </div>
 
-                            <div class="mb-3">
-                                <label class="form-label">Cantidad</label>
-                                <input type="number" class="form-control" id="inputCantidad" />
+                            <div class="mb-4">
+                                <label class="form-label">Descripcion</label>
+                                <input type="text" class="form-control" id="inDes" />
                             </div>
 
-                            <div class="mb-3">
+                            <div class="mb-4">
                                 <label class="form-label">Imagen</label>
-                                <input type="file" class="form-control" id="inImg" />
+                                <input type="file" class="form-control" id="inImg">
+                            </div>
+                            <div class="btnCartel">
+                                <button type="submit" class="btn btn-primary">Crear personaje</button>
+                                <div id="cartelPj">
+                                    <h3>El nombre ya esta en uso, elije otro</h3>
+                                </div>
                             </div>
 
-                            <div class="mb-3">
-                                <button type="submit" class="btn btn-primary">Registrar</button>
-                            </div>
                         </form>
-                        
                     </div>
-                    
                 </div>
             </div>
         </div>
-
+        <div class="col-md-6">
+            <div id="verPjs" class="row"></div>
+        </div>
 
     </main>
 
 
     <footer id="sticky-footer" class="flex-shrink-0 py-4 bg-dark text-white-50">
         <div class="container text-center">
-            <h4>Copyright  &copy;  Kova</h4>
+            <h4>Copyright &copy; Kova</h4>
         </div>
     </footer>
-
-    <!-- <div class="col-md-6">
-        <div id="contenedorProductos" class="row"></div>
-    </div> -->
 
 
     <!-- mis scripts -->

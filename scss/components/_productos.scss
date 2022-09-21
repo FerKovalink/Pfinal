@@ -58,18 +58,11 @@ main {
 
 #formNew{
     display: none;
+    
 }
 
 #cartelLog {
-    margin-top: 5px;
-
-    h3 {
-        color: white;
-        font-family: map-get($map: $fonts, $key:'combo');
-        font-size: 3.5rem;
-        color: map-get($map: $color, $key:'verde');
-        font-weight: 600;
-    }
+    @extend %cartel;
 }
 
 .btn-primary{
@@ -85,8 +78,32 @@ main {
     }
 }
 
-#formArt{
+#formPer{
     @extend .registro;
     // display: none;
     width: 100%;
+    img{
+		width: 50%;
+        margin-bottom: 50px
+	}
+    
+}
+
+#cartelPj {
+    @extend %cartel; 
+   
+    h3{
+        font-size: 3rem;  
+        margin-left: 25px
+    }
+     
+}
+
+#verPjs {
+    @extend %pjCard;
+}
+
+.btnCartel {
+    display: flex;
+    flex-direction: row;
 }

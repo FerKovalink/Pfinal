@@ -18,9 +18,45 @@ main{
 /* .product-base {
     @extend %div-base;
 }*/
-/* .boton-info {
-    @extend %boton;
-}*/
+#cartelPj, #cartelLog {
+  margin-top: 5px;
+}
+#cartelPj h3, #cartelLog h3 {
+  color: white;
+  font-family: "Combo", cursive;
+  font-size: 3.5rem;
+  color: #0b8062;
+  font-weight: 600;
+}
+
+#verPjs, .pjs {
+  margin: auto;
+}
+#verPjs h2, .pjs h2 {
+  font-family: "Bungee Spice", cursive;
+  font-size: 4rem;
+  margin-top: 5px;
+  text-align: center;
+}
+#verPjs h3, .pjs h3 {
+  font-size: 2.5rem;
+  color: #FD7014;
+  text-align: right;
+  font-family: "Satisfy", cursive;
+}
+#verPjs p, .pjs p {
+  font-family: "Combo", cursive;
+  color: #0b8062;
+  margin-top: 10px;
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  margin-left: 10px;
+  margin-bottom: 50px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -107,34 +143,6 @@ nav ul li a:hover, nav ul li a:focus {
   font-weight: 800;
 }
 
-.pjs {
-  margin: auto;
-}
-.pjs h2 {
-  font-family: "Bungee Spice", cursive;
-  font-size: 4rem;
-  margin-top: 5px;
-  text-align: center;
-}
-.pjs h3 {
-  font-size: 2.5rem;
-  color: #FD7014;
-  text-align: right;
-  font-family: "Satisfy", cursive;
-}
-.pjs p {
-  font-family: "Combo", cursive;
-  color: #0b8062;
-  margin-top: 10px;
-  font-size: 3.5rem;
-  font-weight: 700;
-  text-align: center;
-  padding: 20px;
-  border-radius: 10px;
-  margin-left: 10px;
-  margin-bottom: 50px;
-}
-
 .product-card {
   background-color: #171717;
   width: 600px;
@@ -213,35 +221,24 @@ main {
   font-weight: 500;
 }
 
-.registro h2, #formArt h2 {
+.registro h2, #formPer h2 {
   color: white;
   margin-bottom: 20px;
   font-size: 2.5rem;
   font-family: "Bungee Spice", cursive;
 }
-.registro label, #formArt label {
+.registro label, #formPer label {
   color: white;
   font-size: 1.2rem;
   font-family: "Press Start 2P", cursive;
 }
-.registro input, #formArt input {
+.registro input, #formPer input {
   font-size: 1.5rem;
   font-weight: 500;
 }
 
 #formNew {
   display: none;
-}
-
-#cartelLog {
-  margin-top: 5px;
-}
-#cartelLog h3 {
-  color: white;
-  font-family: "Combo", cursive;
-  font-size: 3.5rem;
-  color: #0b8062;
-  font-weight: 600;
 }
 
 .btn-primary {
@@ -256,8 +253,22 @@ main {
   background-color: #FD7014 !important;
 }
 
-#formArt {
+#formPer {
   width: 100%;
+}
+#formPer img {
+  width: 50%;
+  margin-bottom: 50px;
+}
+
+#cartelPj h3 {
+  font-size: 3rem;
+  margin-left: 25px;
+}
+
+.btnCartel {
+  display: flex;
+  flex-direction: row;
 }
 
 /*# sourceMappingURL=main.css.map */

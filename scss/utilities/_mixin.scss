@@ -48,33 +48,50 @@ main{
     @extend %div-base;
 }*/
 
-%boton {
-	color: map-get($map: $color, $key: "violeta");
-	font-size: 11px;
-	text-transform: uppercase;
-	font-weight: $textBold;
-	background: none;
-	border: 1px solid map-get($map: $color, $key: "violeta");
-	padding: 6px 14px;
-	margin-top: 10px;
-	line-height: 16px;
-	border-radius: 20px;
 
-	i {
-		font-size: 14px;
-		font-weight: $textBold;
-		margin-left: 5px;
-	}
+%cartel {
+	margin-top: 5px;
 
-	&:hover,
-	&:focus {
+	h3 {
 		color: white;
-		background: map-get($map: $color, $key: "violeta");
-		border: 1px solid map-get($map: $color, $key: "violeta");
+		font-family: map-get($map: $fonts, $key:'combo');
+		font-size: 3.5rem;
+		color: map-get($map: $color, $key:'verde');
+		font-weight: 600;
 	}
 }
 
-/* .boton-info {
-    @extend %boton;
-}*/
+%pjCard {
+	margin: auto;
 
+	h2 {
+		font-family: map-get($map: $fonts, $key: 'nav');
+		font-size: 4rem;
+		margin-top: 5px;
+		text-align: center;
+	}
+
+	h3 {
+		font-size: 2.5rem;
+		color: map-get($map: $color, $key:'naranja');
+		text-align: right;
+		font-family: map-get($map: $fonts, $key:'sa');
+	}
+
+	p {
+		font-family: map-get($map: $fonts, $key:'combo');
+		color: map-get($map: $color, $key: 'verde');
+		margin-top: 10px;
+		font-size: 3.5rem;
+		font-weight: 700;
+		text-align: center;
+		padding: 20px;
+		border-radius: 10px;
+		margin-left: 10px;
+		margin-bottom: 50px;
+	}
+}
+
+.imgCrear {
+	
+}
