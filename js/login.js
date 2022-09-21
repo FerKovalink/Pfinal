@@ -46,6 +46,7 @@ function initEvents() {
     formLogin.onsubmit = (event) => validLog(event)
     formNew.onsubmit = (event) => validNew(event)
     btnForm.onclick = mostrarForm
+
 }
 
 function mostrarForm() {
@@ -81,6 +82,7 @@ function validNew(event) {
 
         cuentas.push(nuevoUser)
         formNew.reset()
+        updateUser()
 
         cartel("Cuenta creada")
     }
@@ -96,14 +98,30 @@ function validLog(event) {
 
     if (valUser && valPass) {
         cartel(`Bienvenido ${user}`)
+        cuentasUser.style.display = "none"
+        formArt.style.display = "block"
     } else {
         cartel("Datos incorrectos")
     }
 }
 
+function updateUser() {
+    let userJSON = JSON.stringify(cuentas)
+    localStorage.setItem("usuarios", userJSON)
+}
+
+function getUser() {
+    let userJSON = localStorage.getItem("usuarios")
+    if (userJSON) {
+        cuentas = JSON.parse(userJSON)
+    }
+}
+
+
 function main() {
     initElements()
     initEvents()
+    getUser()
 }
 
 main()
