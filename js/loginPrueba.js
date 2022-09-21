@@ -164,17 +164,20 @@ function validPjs(event) {
 
     const valPj = personajes.some((personaje) => personaje.pj === pj)
 
-    if (!valPj) {
-        let nuevoPj = new Personaje(pj, raza, des, img)
-
-        personajes.push(nuevoPj)
-        formPjs.reset()
-        updatePjs()
-        mostrarPjs()
+    if (personajes.length > 2) {
+        cartelPjs("Solo puedes crear hasta 3 personajes")
     } else {
-        cartelPjs("El nombre ya esta en uso, elije otro")
-    }
+        if (!valPj) {
+            let nuevoPj = new Personaje(pj, raza, des, img)
 
+            personajes.push(nuevoPj)
+            formPjs.reset()
+            updatePjs()
+            mostrarPjs()
+        } else {
+            cartelPjs("El nombre ya esta en uso, elije otro")
+        }
+    }
 }
 
 function cartelPjs(mensaje) {
@@ -246,8 +249,6 @@ function armar() {
     mostrarPjs()
 
 }
-
-
 
 function main() {
     initElements()

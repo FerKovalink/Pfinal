@@ -51,6 +51,7 @@ main{
 
 %cartel {
 	margin-top: 5px;
+	
 
 	h3 {
 		color: white;
@@ -63,6 +64,7 @@ main{
 
 %pjCard {
 	background-color: black;
+	width: 100%;
 	
 	h2 {
 		font-family: map-get($map: $fonts, $key: 'nav');
