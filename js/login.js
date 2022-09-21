@@ -11,7 +11,6 @@ let inEdad
 let inMail
 let cartelLog
 let btnForm
-let formArt
 let cuentasUser
 
 class Login {
@@ -38,7 +37,6 @@ function initElements() {
     inMail = document.getElementById('inMail')
     cartelLog = document.getElementById('cartelLog')
     btnForm = document.getElementById('btnForm')
-    formArt = document.getElementById('formArt')
     cuentasUser = document.getElementById('cuentasUser')
 }
 
@@ -98,8 +96,8 @@ function validLog(event) {
 
     if (valUser && valPass) {
         cartel(`Bienvenido ${user}`)
-        cuentasUser.style.display = "none"
-        formArt.style.display = "block"
+        
+        
     } else {
         cartel("Datos incorrectos")
     }
