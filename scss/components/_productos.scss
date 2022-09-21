@@ -101,7 +101,7 @@ main {
 
 #verPjs {
     @extend %pjCard;
-    background-color: map-get($map: $color, $key: "negro");
+    width: 100%;    
 }
 
 .btnCartel {

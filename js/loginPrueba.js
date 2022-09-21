@@ -171,7 +171,7 @@ function validPjs(event){
 
         personajes.push(nuevoPj)
         formPjs.reset()
-        // updatePjs()
+        updatePjs()
         mostrarPjs()
 
     } else {
@@ -196,7 +196,7 @@ function delPj(personaje){
 
     personajes.splice(indexPj, 1)
     borrarPj.remove()
-    // updatePjs()
+    updatePjs()
 }
 
 function mostrarPjs(){
@@ -221,18 +221,18 @@ function mostrarPjs(){
     } )
 }
 
-// function updatePjs(){
-//     let pjJSON= JSON.stringify(personajes)
-//     localStorage.setItem("personajes", pjJSON)
-// }
+function updatePjs(){
+    let pjJSON= JSON.stringify(personajes)
+    localStorage.setItem("personajes", pjJSON)
+}
 
-// function getPjs(){
-//     let pjJSON= localStorage.getItem("personajes")
-//     if(pjJSON){
-//         personajes.JSON.parse(pjJSON)
-//         mostrarPjs()
-//     }
-// }
+function getPjs(){
+    let pjJSON= localStorage.getItem("personajes")
+    if(pjJSON){
+        personajes.JSON.parse(pjJSON)
+        mostrarPjs()
+    }
+}
 
 function delAll(){
     localStorage.clear()
@@ -249,7 +249,7 @@ function main() {
 
     iniciarElementos()
     iniciarEventos()
-    // getPjs()
+    getPjs()
 }
 
 main()

@@ -62,8 +62,8 @@ main{
 }
 
 %pjCard {
+	background-color: black;
 	
-
 	h2 {
 		font-family: map-get($map: $fonts, $key: 'nav');
 		font-size: 4rem;
