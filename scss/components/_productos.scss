@@ -80,11 +80,11 @@ main {
 
 #formPer{
     @extend .registro;
-    // display: none;
+    display: none;
     width: 100%;
     img{
 		width: 50%;
-        margin-bottom: 50px
+       
 	}
     
 }
@@ -101,6 +101,7 @@ main {
 
 #verPjs {
     @extend %pjCard;
+    background-color: map-get($map: $color, $key: "negro");
 }
 
 .btnCartel {

@@ -29,9 +29,6 @@ main{
   font-weight: 600;
 }
 
-#verPjs, .pjs {
-  margin: auto;
-}
 #verPjs h2, .pjs h2 {
   font-family: "Bungee Spice", cursive;
   font-size: 4rem;
@@ -254,16 +251,20 @@ main {
 }
 
 #formPer {
+  display: none;
   width: 100%;
 }
 #formPer img {
   width: 50%;
-  margin-bottom: 50px;
 }
 
 #cartelPj h3 {
   font-size: 3rem;
   margin-left: 25px;
+}
+
+#verPjs {
+  background-color: #171717;
 }
 
 .btnCartel {

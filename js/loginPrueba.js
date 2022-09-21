@@ -102,7 +102,7 @@ function validLog(event) {
         cartel.innerHTML = `<h3>Bienvenido ${user} </h3>`
         cartelLog.append(cartel)
         cuentasUser.style.display = "none"
-        formArt.style.display = "block"
+        formPer.style.display = "block"
     } else {
         cartel("Datos incorrectos")
     }
@@ -157,8 +157,9 @@ function iniciarEventos(){
 
 
 
-function validPjs(){
-    let pj = inPj.value.toLowerCase()
+function validPjs(event){
+    event.preventDefault()
+    let pj = inPj.value
     let raza = inRaza.value
     let des = inDes.value
     let img = inImg.value
@@ -170,11 +171,11 @@ function validPjs(){
 
         personajes.push(nuevoPj)
         formPjs.reset()
-        updatePjs()
+        // updatePjs()
         mostrarPjs()
 
     } else {
-        cartel("El nombre ya esta en uso, elije otro")
+        cartelPjs("El nombre ya esta en uso, elije otro")
     }
 
 }
@@ -199,7 +200,7 @@ function delPj(personaje){
 }
 
 function mostrarPjs(){
-    verPjs.innerHTML = ""
+   
     personajes.forEach((personaje) => {
         let card = document.createElement("div")
         card.className = "product-card"
@@ -215,8 +216,8 @@ function mostrarPjs(){
                 </div>`
         verPjs.append(card)
 
-        let btnDel = document.getElementsById(`btnDel-${personaje.pj}`)
-        btnDel.onclick = () => delPj(personaje.pj)
+        // let btnDel = document.getElementsById(`btnDel-${personaje.pj}`)
+        // btnDel.onclick = () => delPj(personaje.pj)
     } )
 }
 

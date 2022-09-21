@@ -62,7 +62,7 @@ main{
 }
 
 %pjCard {
-	margin: auto;
+	
 
 	h2 {
 		font-family: map-get($map: $fonts, $key: 'nav');
@@ -90,8 +90,4 @@ main{
 		margin-left: 10px;
 		margin-bottom: 50px;
 	}
-}
-
-.imgCrear {
-	
 }
