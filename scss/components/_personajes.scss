@@ -107,16 +107,14 @@
 
 .product-card {
     background-color: map-get($map: $color, $key:'negro');
-    width: 450px;
+    width: 50%;
     left: 14%;
     border-radius: 40px;
     position: relative;
-
-    
 }
 
 .product-details {
-    width: 70%;
+    width: 80%;
     padding: 10px;
 }
 
