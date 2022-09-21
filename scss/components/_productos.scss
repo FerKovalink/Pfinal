@@ -101,10 +101,45 @@ main {
 
 #verPjs {
     @extend %pjCard;
-    width: 100%;    
+    width: 100%; 
+    margin: 10%;   
 }
 
 .btnCartel {
     display: flex;
     flex-direction: row;
 }
+
+.product-card {
+    background-color: map-get($map: $color, $key:'negro');
+    width: 600px;
+    height: 400px;
+    margin: auto;
+    border-radius: 40px;
+    position: relative;
+  }
+  
+  .product-details {
+    width: 80%;
+    padding: 10px;
+  }
+  
+  .product-image {
+    position: absolute;
+    right: -160px;
+    top: -30px;
+  
+    img {
+      width: 300px;
+    }
+  }
+
+  .personajes {
+    @include box-flex(center, center, column);
+    margin-top: 10px;
+    width: 100%;
+    background-color: black;
+    background-image: url("../../img/index/ar.png");
+    background-position: center;
+
+  }

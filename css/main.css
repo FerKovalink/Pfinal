@@ -109,51 +109,6 @@ nav ul li a:hover, nav ul li a:focus {
   margin-bottom: 10px;
 }
 
-.peluca {
-  display: flex !important;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin-top: 10px;
-  position: relative;
-  width: 100%;
-}
-.peluca img {
-  width: 100%;
-}
-
-.sape {
-  width: 1000px;
-  position: absolute;
-  top: 15;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-}
-
-.product-card {
-  background-color: #171717;
-  width: 600px;
-  height: 400px;
-  margin: auto;
-  border-radius: 40px;
-  position: relative;
-}
-
-.product-details {
-  width: 80%;
-  padding: 10px;
-}
-
-.product-image {
-  position: absolute;
-  right: -160px;
-  top: -30px;
-}
-.product-image img {
-  width: 300px;
-}
-
 .mapa {
   display: flex !important;
   justify-content: center;
@@ -256,11 +211,47 @@ main {
 
 #verPjs {
   width: 100%;
+  margin: 10%;
 }
 
 .btnCartel {
   display: flex;
   flex-direction: row;
+}
+
+.product-card {
+  background-color: #171717;
+  width: 600px;
+  height: 400px;
+  margin: auto;
+  border-radius: 40px;
+  position: relative;
+}
+
+.product-details {
+  width: 80%;
+  padding: 10px;
+}
+
+.product-image {
+  position: absolute;
+  right: -160px;
+  top: -30px;
+}
+.product-image img {
+  width: 300px;
+}
+
+.personajes {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 10px;
+  width: 100%;
+  background-color: black;
+  background-image: url("../../img/index/ar.png");
+  background-position: center;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -40,55 +40,55 @@ nav {
   }
 }
 
-.peluca {
-  @include box-flex(center, center, column);
-  margin-top: 10px;
-  position: relative;
-  width: 100%;
+// .peluca {
+//   @include box-flex(center, center, column);
+//   margin-top: 10px;
+//   position: relative;
+//   width: 100%;
 
-  img {
-    width: 100%;
-  }
-}
+//   img {
+//     width: 100%;
+//   }
+// }
 
-.sape {
-  width: 1000px;
-  position: absolute;
-  top: 15;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
+// .sape {
+//   width: 1000px;
+//   position: absolute;
+//   top: 15;
+//   left: 0;
+//   right: 0;
+//   margin: 0 auto;
 
  
-}
+// }
 
 .pjs {
   @extend %pjCard;
 }
 
-.product-card {
-  background-color: map-get($map: $color, $key:'negro');
-  width: 600px;
-  height: 400px;
-  margin: auto;
-  border-radius: 40px;
-  position: relative;
-}
+// .product-card {
+//   background-color: map-get($map: $color, $key:'negro');
+//   width: 600px;
+//   height: 400px;
+//   margin: auto;
+//   border-radius: 40px;
+//   position: relative;
+// }
 
-.product-details {
-  width: 80%;
-  padding: 10px;
-}
+// .product-details {
+//   width: 80%;
+//   padding: 10px;
+// }
 
-.product-image {
-  position: absolute;
-  right: -160px;
-  top: -30px;
+// .product-image {
+//   position: absolute;
+//   right: -160px;
+//   top: -30px;
 
-  img {
-    width: 300px;
-  }
-}
+//   img {
+//     width: 300px;
+//   }
+// }
 
 .mapa{
   @include box-flex(center, center, column);

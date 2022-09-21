@@ -131,16 +131,16 @@ let inImg
 let verPjs
 let cartelPj
 
-class Personaje{
-    constructor(pj, raza, des, img){
+class Personaje {
+    constructor(pj, raza, des, img) {
         this.pj = pj
-        this.raza = raza
+        this.raza = raza.toUpperCase()
         this.des = des
         this.img = img
     }
 }
 
-function iniciarElementos(){
+function iniciarElementos() {
     formPer = document.getElementById("formPer")
     formPjs = document.getElementById("formPjs")
     inPj = document.getElementById("inPj")
@@ -151,13 +151,11 @@ function iniciarElementos(){
     cartelPj = document.getElementById("cartelPj")
 }
 
-function iniciarEventos(){
+function iniciarEventos() {
     formPjs.onsubmit = (event) => validPjs(event)
 }
 
-
-
-function validPjs(event){
+function validPjs(event) {
     event.preventDefault()
     let pj = inPj.value
     let raza = inRaza.value
@@ -166,14 +164,13 @@ function validPjs(event){
 
     const valPj = personajes.some((personaje) => personaje.pj === pj)
 
-    if(!valPj){
+    if (!valPj) {
         let nuevoPj = new Personaje(pj, raza, des, img)
 
         personajes.push(nuevoPj)
         formPjs.reset()
         updatePjs()
         mostrarPjs()
-
     } else {
         cartelPjs("El nombre ya esta en uso, elije otro")
     }
@@ -190,7 +187,7 @@ function cartelPjs(mensaje) {
     }, 2000)
 }
 
-function delPj(personaje){
+function delPj(personaje) {
     let borrarPj = document.createElementById(`card-${personaje}`)
     let indexPj = personajes.findIndex((personaje) => personaje.pj === personaje)
 
@@ -199,45 +196,55 @@ function delPj(personaje){
     updatePjs()
 }
 
-function mostrarPjs(){
-   
+function mostrarPjs() {
     personajes.forEach((personaje) => {
         let card = document.createElement("div")
-        card.className = "product-card"
+        card.className = "carousel-item active"
         card.id = `card-${personaje.pj}`
         card.innerHTML = `
-                <div class="product-image">
-                  <img src="${personaje.img}">
-                </div>
-                <div class="product-details">
-                  <h2>${personaje.pj}</h2>
-                  <h3>${personaje.raza}</h3>
-                  <p>${personaje.des}</p>
-                </div>`
+        <div class="product-card">
+        <div class="product-image">
+            <img src=${personaje.img}>
+        </div>
+        <div class="product-details">
+            <h2>${personaje.pj}</h2>
+            <h3>${personaje.raza}</h3>
+            <p>${personaje.des}</p>
+        </div>`
         verPjs.append(card)
 
         // let btnDel = document.getElementsById(`btnDel-${personaje.pj}`)
         // btnDel.onclick = () => delPj(personaje.pj)
-    } )
+    })
 }
 
-function updatePjs(){
-    let pjJSON= JSON.stringify(personajes)
+function updatePjs() {
+    let pjJSON = JSON.stringify(personajes)
     localStorage.setItem("personajes", pjJSON)
 }
 
-function getPjs(){
-    let pjJSON= localStorage.getItem("personajes")
-    if(pjJSON){
+function getPjs() {
+    let pjJSON = localStorage.getItem("personajes")
+    if (pjJSON) {
         personajes.JSON.parse(pjJSON)
         mostrarPjs()
     }
 }
 
-function delAll(){
+function delAll() {
     localStorage.clear()
     personajes = []
     mostrarPjs()
+}
+
+function armar() {
+    let nuevoPj = new Personaje("Dungeon Master", "DM", "Patt creador, director y guionista de las aventuras. Cabeza y parte del team", "src/img/pjs/dm.png")
+    let nuevoPjs = new Personaje("Thork", "enano", "Un enano de las montañas del sur pija larga", "src/img/pjs/dm.png")
+
+    personajes.push(nuevoPj, nuevoPjs)
+    updatePjs()
+    mostrarPjs()
+
 }
 
 
@@ -249,6 +256,7 @@ function main() {
 
     iniciarElementos()
     iniciarEventos()
+    // armar()
     getPjs()
 }
 
