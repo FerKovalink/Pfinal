@@ -55,7 +55,7 @@ nav {
 .mapa{
   @include box-flex(center, center, column);
   width: 100%;
-  background-color: black;
+  background-color: map-get($map: $color, $key:"negro");
 
   video{
     width: 1280px;
@@ -81,8 +81,6 @@ nav {
 .parallax {
   background-image: url("../../img/ban3.jpg");
   width: 100%;
-  
-
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;

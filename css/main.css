@@ -30,7 +30,6 @@ main{
 }
 
 #verPjs {
-  background-color: black;
   width: 100%;
 }
 #verPjs h2 {
@@ -128,7 +127,7 @@ nav ul li a:hover, nav ul li a:focus {
   align-items: center;
   flex-direction: column;
   width: 100%;
-  background-color: black;
+  background-color: #171717;
 }
 .mapa video {
   width: 1280px;
@@ -250,9 +249,8 @@ nav ul li a:hover, nav ul li a:focus {
 
 .product-card {
   background-color: #171717;
-  width: 550px;
-  height: 400px;
-  margin: auto;
+  width: 50%;
+  left: 14%;
   border-radius: 40px;
   position: relative;
 }
@@ -266,6 +264,7 @@ nav ul li a:hover, nav ul li a:focus {
   position: absolute;
   right: -160px;
   top: -30px;
+  display: block;
 }
 .product-image img {
   width: 300px;

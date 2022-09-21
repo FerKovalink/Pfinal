@@ -67,35 +67,36 @@ function cartelPjs(mensaje) {
     }, 2000)
 }
 
-function delPj(personaje) {
-    let borrarPj = document.createElementById(`card-${personaje}`)
-    let indexPj = personajes.findIndex((personaje) => personaje.pj === personaje)
+function mostrarPjs() {
+    personajes.forEach((personaje) => {
+        const card = document.createElement("div")
+        card.className = "carousel-item active"
+        card.id = `card-${personaje.pj}`
+        card.innerHTML = `
+                <div class="product-card">
+                <div class="product-image">
+                    <img src=${personaje.img}>
+                </div>
+                <div class="product-details">
+                    <h2>${personaje.pj}</h2>    
+                    <h3>${personaje.raza}</h3>
+                    <p>${personaje.des}</p>
+                    <button class="btn btn-primary" id="btnDel-${personaje.pj}" >Eliminar</button>
+                </div>`
+        verPjs.append(card)
+
+        let btnDel = document.getElementById(`card-${personaje.pj}`)
+        btnDel.onclick = () => delPj(personaje.pj)
+    })
+}
+
+function delPj(pj) {
+    let borrarPj = document.getElementById(`card-${pj}`)
+    let indexPj = personajes.findIndex((personaje) => personaje.pj === pj)
 
     personajes.splice(indexPj, 1)
     borrarPj.remove()
     updatePjs()
-}
-
-function mostrarPjs() {
-    personajes.forEach((personaje) => {
-        let card = document.createElement("div")
-        card.className = "carousel-item active"
-        card.id = `card-${personaje.pj}`
-        card.innerHTML = `
-        <div class="product-card">
-        <div class="product-image">
-            <img src=${personaje.img}>
-        </div>
-        <div class="product-details">
-            <h2>${personaje.pj}</h2>
-            <h3>${personaje.raza}</h3>
-            <p>${personaje.des}</p>
-        </div>`
-        verPjs.append(card)
-
-        // let btnDel = document.getElementsById(`btnDel-${personaje.pj}`)
-        // btnDel.onclick = () => delPj(personaje.pj)
-    })
 }
 
 function updatePjs() {
@@ -118,20 +119,18 @@ function delAll() {
 }
 
 function armar() {
-    let nuevoPj = new Personaje("Dungeon Master", "DM", "Patt creador, director y guionista de las aventuras. Cabeza y parte del team", "src/img/pjs/dm.png")
-    let nuevoPjs = new Personaje("Thork", "enano", "Un enano de las montañas del sur pija larga", "src/img/pjs/dm.png")
-
-    personajes.push(nuevoPj, nuevoPjs)
+    let nuevoPjs = new Personaje("Dungeon Master", "DM", "Patt creador, director y guionista de las aventuras. Cabeza y parte del team", "img/pjs/dm.png")
+    personajes.push(nuevoPjs)
     updatePjs()
-    mostrarPjs()
-
+    
 }
 
 function main() {
     iniciarElementos()
     iniciarEventos()
-    // armar()
     getPjs()
+    armar()
+    
 }
 
 main()

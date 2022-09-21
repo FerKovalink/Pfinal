@@ -10,7 +10,7 @@
         color: white;
         margin-bottom: 20px;
         font-size: 2.5rem;
-        font-family: map-get($map: $fonts, $key:'nav');        
+        font-family: map-get($map: $fonts, $key:'nav');
     }
 
     label {
@@ -46,57 +46,58 @@
     }
 }
 
-#formNew{
+#formNew {
     display: none;
-    
+
 }
 
 #cartelLog {
     @extend %cartel;
 }
 
-.btn-primary{
+.btn-primary {
     background-color: map-get($map: $color, $key:'verde') !important;
     border-color: map-get($map: $color, $key:'verde') !important;
-    font-family: map-get($map: $fonts, $key:'combo')!important;
+    font-family: map-get($map: $fonts, $key:'combo') !important;
     font-size: 1.8rem !important;
     margin-top: 5px;
     margin-bottom: 10px;
 
-    &:hover{
+    &:hover {
         background-color: map-get($map: $color, $key:'naranja') !important;
     }
 }
 
-#formPer{
+#formPer {
     @extend .registro;
     display: none;
     width: 100%;
     padding-bottom: 20px;
-    img{
-		width: 50%;
-	}
+
+    img {
+        width: 50%;
+    }
 }
 
 #formPjs {
-    input{
+    input {
         width: 80%
     }
 }
 
 #cartelPj {
-    @extend %cartel; 
-   
-    h3{
-        font-size: 3rem;  
+    @extend %cartel;
+
+    h3 {
+        font-size: 3rem;
         margin-left: 25px
     }
 }
 
 #verPjs {
     @extend %pjCard;
-    width: 100%; 
-    margin: 10%;   
+    width: 100%;
+    margin: 10%;
 }
 
 .btnCartel {
@@ -106,34 +107,33 @@
 
 .product-card {
     background-color: map-get($map: $color, $key:'negro');
-    width: 550px;
-    height: 400px;
-    margin: auto;
+    width: 50%;
+    left: 14%;
     border-radius: 40px;
     position: relative;
-  }
-  
-  .product-details {
+}
+
+.product-details {
     width: 80%;
     padding: 10px;
-  }
-  
-  .product-image {
+}
+
+.product-image {
     position: absolute;
     right: -160px;
     top: -30px;
-  
-    img {
-      width: 300px;
-    }
-  }
+    display: block;
 
-  .personajes {
+    img {
+        width: 300px;
+    }
+}
+
+.personajes {
     @include box-flex(center, center, column);
     margin-top: 10px;
     width: 100%;
     background-color: black;
     background-image: url("../../img/index/ar.png");
     background-position: center;
-  }
-
+}
