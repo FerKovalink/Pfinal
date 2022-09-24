@@ -182,7 +182,7 @@ nav ul li a:hover, nav ul li a:focus {
   font-size: 1.2rem;
   font-family: "Press Start 2P", cursive;
 }
-.login input {
+.login input, .login #formPjs select, #formPjs .login select {
   font-size: 1.5rem;
   font-weight: 500;
 }
@@ -198,7 +198,7 @@ nav ul li a:hover, nav ul li a:focus {
   font-size: 1.2rem;
   font-family: "Press Start 2P", cursive;
 }
-.registro input, #formPer input {
+.registro input, .registro #formPjs select, #formPjs .registro select, #formPer input, #formPer #formPjs select, #formPjs #formPer select {
   font-size: 1.5rem;
   font-weight: 500;
 }
@@ -228,8 +228,16 @@ nav ul li a:hover, nav ul li a:focus {
   width: 50%;
 }
 
-#formPjs input {
+#formPjs input, #formPjs select {
   width: 80%;
+}
+#formPjs select {
+  width: 30%;
+  margin-left: 20px;
+  margin-top: 8px;
+}
+#formPjs label {
+  font-size: 1.3rem;
 }
 
 #cartelPj h3 {

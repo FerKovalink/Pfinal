@@ -83,6 +83,17 @@
     input {
         width: 80%
     }
+
+    select {
+        width: 30%;
+        @extend input;
+        margin-left: 20px;
+        margin-top: 8px;
+    }
+
+    label {
+        font-size: 1.3rem;
+    }
 }
 
 #cartelPj {
@@ -137,4 +148,3 @@
     background-image: url("https://github.com/FerKovalink/d-d/blob/master/img/index/ar.png?raw=true");
     background-position: center;
 }
-

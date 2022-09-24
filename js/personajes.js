@@ -32,12 +32,33 @@ function iniciarEventos() {
     formPjs.onsubmit = (event) => validPjs(event)
 }
 
+
+
 function validPjs(event) {
     event.preventDefault()
     let pj = inPj.value
     let raza = inRaza.value
     let des = inDes.value
-    let img = inImg.value
+    let imgPj = inImg.value
+    let img
+
+    switch (imgPj) {
+        case 1:
+            img = src="../img/pjs/dm.png"
+            break
+        case 2:
+            img = "https://raw.githubusercontent.com/FerKovalink/d-d/master/img/pjs/dm.png"
+            break
+        case 3:
+            img = "https://raw.githubusercontent.com/FerKovalink/d-d/master/img/pjs/dm.png"
+            break
+        case 4:
+            img = "https://raw.githubusercontent.com/FerKovalink/d-d/master/img/pjs/dm.png"
+            break
+        case 5:
+            img = "https://raw.githubusercontent.com/FerKovalink/d-d/master/img/pjs/dm.png"
+            break
+    }
 
     const valPj = personajes.some((personaje) => personaje.pj === pj)
 
@@ -75,7 +96,7 @@ function mostrarPjs() {
         card.innerHTML = `
                 <div class="product-card">
                 <div class="product-image">
-                    <img src=${personaje.img}>
+                    <img ${personaje.img}>
                 </div>
                 <div class="product-details">
                     <h2>${personaje.pj}</h2>    
@@ -123,7 +144,7 @@ function armar() {
     let nuevoPjs = new Personaje("Dungeon Master", "DM", "Patt creador, director y guionista de las aventuras. Cabeza y parte del team", "img/pjs/dm.png")
     personajes.push(nuevoPjs)
     updatePjs()
-    
+
 }
 
 function main() {
@@ -131,7 +152,7 @@ function main() {
     iniciarEventos()
     getPjs()
 
-    
+
 }
 
 main()
