@@ -17,7 +17,7 @@ class Personaje {
     }
 }
 
-function iniciarElementos() {
+function initElementos() {
     formPer = document.getElementById("formPer")
     formPjs = document.getElementById("formPjs")
     inPj = document.getElementById("inPj")
@@ -28,11 +28,9 @@ function iniciarElementos() {
     cartelPj = document.getElementById("cartelPj")
 }
 
-function iniciarEventos() {
+function initEventos() {
     formPjs.onsubmit = (event) => validPjs(event)
 }
-
-
 
 function validPjs(event) {
     event.preventDefault()
@@ -42,28 +40,23 @@ function validPjs(event) {
     let imgPj = inImg.value
     let img
 
-    switch (imgPj) {
-        case 1:
-            img = src="../img/pjs/dm.png"
-            break
-        case 2:
-            img = "https://raw.githubusercontent.com/FerKovalink/d-d/master/img/pjs/dm.png"
-            break
-        case 3:
-            img = "https://raw.githubusercontent.com/FerKovalink/d-d/master/img/pjs/dm.png"
-            break
-        case 4:
-            img = "https://raw.githubusercontent.com/FerKovalink/d-d/master/img/pjs/dm.png"
-            break
-        case 5:
-            img = "https://raw.githubusercontent.com/FerKovalink/d-d/master/img/pjs/dm.png"
-            break
+    if (imgPj == 1) {
+        img = "https://github.com/FerKovalink/d-d/blob/master/img/pjs/dm.png?raw=true"
+    } else if(imgPj == 2) {
+        img = "https://github.com/FerKovalink/d-d/blob/master/img/pjs/chulen.png?raw=true"
+    } else if(imgPj == 3) {
+        img = "https://github.com/FerKovalink/d-d/blob/master/img/pjs/pants.png?raw=true"
+    } else if(imgPj == 4) {
+        img = "https://github.com/FerKovalink/d-d/blob/master/img/pjs/talon.png?raw=true"
+    } else if(imgPj == 5) {
+        img = "https://github.com/FerKovalink/d-d/blob/master/img/pjs/drak.png?raw=true"
     }
+
 
     const valPj = personajes.some((personaje) => personaje.pj === pj)
 
-    if (personajes.length > 2) {
-        cartelPjs("Solo puedes crear hasta 3 personajes")
+    if (personajes.length > 5) {
+        cartelPjs("Solo puedes crear hasta 6 personajes")
     } else {
         if (!valPj) {
             let nuevoPj = new Personaje(pj, raza, des, img)
@@ -91,12 +84,11 @@ function cartelPjs(mensaje) {
 function mostrarPjs() {
     personajes.forEach((personaje) => {
         const card = document.createElement("div")
-        card.className = "carousel-item active"
         card.id = `card-${personaje.pj}`
         card.innerHTML = `
                 <div class="product-card">
                 <div class="product-image">
-                    <img ${personaje.img}>
+                    <img src=${personaje.img}>
                 </div>
                 <div class="product-details">
                     <h2>${personaje.pj}</h2>    
@@ -148,8 +140,8 @@ function armar() {
 }
 
 function main() {
-    iniciarElementos()
-    iniciarEventos()
+    initElementos()
+    initEventos()
     getPjs()
 
 

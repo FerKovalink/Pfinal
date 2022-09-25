@@ -129,23 +129,22 @@
               <form id="formPjs">
                 <div class="mb-4">
                   <label class="form-label">Nombre</label>
-                  <input type="text" class="form-control" id="inPj" required minlength="3"/>
+                  <input type="text" class="form-control" id="inPj" required minlength="3" />
                 </div>
 
                 <div class="mb-4">
                   <label class="form-label">Raza</label>
-                  <input type="text" class="form-control" id="inRaza" required minlength="2"/>
+                  <input type="text" class="form-control" id="inRaza" required minlength="2" />
                 </div>
 
                 <div class="mb-4">
                   <label class="form-label">Descripcion</label>
-                  <input type="text" class="form-control" id="inDes" required minlength="15"/>
+                  <input type="text" class="form-control" id="inDes" required minlength="15" />
                 </div>
 
                 <div class="mb-4">
                   <label class="form-label">Seleccione una mini</label>
-                  <select type="text" id="inImg">
-                    <option value="0">Seleccion</option>
+                  <select type="text" id="inImg" required>
                     <option value="1">DM</option>
                     <option value="2">Enano</option>
                     <option value="3">Mago</option>
@@ -157,7 +156,6 @@
                   <button type="submit" class="btn btn-primary">Crear personaje</button>
                   <div id="cartelPj"> </div>
                 </div>
-
               </form>
             </div>
           </div>
@@ -165,28 +163,17 @@
       </div>
 
       <div class="personajes">
-        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-          
-          <div id="verPjs" class="carousel-inner"></div>
-
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
-            data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"
-            data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
+          <div id="verPjs"></div>
       </div>
     </div>
-    <div class="parallax"> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> </div>
+
+    <div class="parallax">
+       <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> 
+    </div>
 
     <div id="map" class="mapa">
       <h4>Mapa de Verna</h4>
-      <video src="img/mapa/mapa.mp4" autoplay loop muted></video>
+      <video src="img/mapa/mapa.mp4" autoplay loop muted controls></video>
     </div>
 
 
