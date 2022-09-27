@@ -140,7 +140,7 @@ function verMinis() {
 
         bg = document.querySelector('#tarjeta')
         if (bgg == 1) {
-            bg.style.backgroundImage = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/dmm.jpg?raw=true')"
+            bg.style.backgroundImage = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/dm.jpg?raw=true')"
         } else if (bgg == 2) {
             bg.style.backgroundImage = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/enano.jpg?raw=true')"
         } else if (bgg == 3) {
