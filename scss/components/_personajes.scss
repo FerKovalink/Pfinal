@@ -108,7 +108,7 @@
 #verPjs {
     @extend %pjCard;
     width: 100%;
-   
+
 }
 
 .btnCartel {
@@ -129,7 +129,7 @@
     padding: 10px;
 }
 
-.product-image{
+.product-image {
     position: absolute;
     right: -160px;
     top: -30px;
@@ -147,6 +147,159 @@
     background-position: center;
 }
 
-.verMinis{
-    @include box-flex(center, center, row);
+
+#minis {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding: 10px;
+    background-image: ;
+    width: 100%;
+}
+
+.contenedor {
+    position: relative;
+}
+
+.contenedor .tarjeta {
+    position: relative;
+    width: 320px;
+    height: 450px;
+    background: #232323;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.contenedor .tarjeta:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: map-get($map: $color, $key:"naranja");
+    clip-path: circle(150px at 80% 20%);
+    transition: 0.5s ease-in-out;
+}
+
+.contenedor .tarjeta:hover:before {
+    clip-path: circle(300px at 80% -20%);
+}
+
+.contenedor .tarjeta:after {
+    content: 'D&D';
+    position: absolute;
+    top: 30%;
+    left: -10%;
+    font-size: 15rem;
+    font-weight: 800;
+    font-family: map-get($map: $fonts, $key:"combo");
+    color: rgba(255, 255, 25, 0.05)
+}
+
+.contenedor .tarjeta .imgBx {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    width: 100%;
+    height: 220px;
+    transition: 0.5s;
+}
+
+.contenedor .tarjeta:hover .imgBx {
+    top: 0%;
+    transform: translateY(0%);
+
+}
+
+.contenedor .tarjeta .imgBx img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+}
+
+.contenedor .tarjeta .pj {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    transition: 1s;
+    z-index: 10;
+}
+
+.contenedor .tarjeta:hover .pj {
+    height: 210px;
+}
+
+.contenedor .tarjeta .pj h2 {
+    position: relative;
+    letter-spacing: 1px;
+    font-family: map-get($map: $fonts, $key:"nav");
+    font-size: 2.5rem;
+}
+
+.contenedor .tarjeta .pj .raza,
+.contenedor .tarjeta .pj .descript {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3px 10px;
+    transition: 0.5s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.contenedor .tarjeta:hover .pj .raza {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.5s;
+}
+
+.contenedor .tarjeta:hover .pj .descript {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.6s;
+}
+
+
+.contenedor .tarjeta .pj a button {
+    display: inline-block;
+    margin-top: 10px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 0.5s;
+}
+
+.contenedor .tarjeta:hover .pj a {
+    opacity: 1;
+    transform: translateY(0px);
+    transition-delay: 0.75s;
+
+}
+
+.raza {
+    h3 {
+        font-family: map-get($map: $fonts, $key:"sa");
+        text-transform: uppercase;
+        font-size: 2rem;
+        color: map-get($map: $color, $key:"naranja");
+    }
+}
+
+.descript {
+    h3 {
+        font-family: map-get($map: $fonts, $key:"combo");
+        font-size: 2rem;
+        color: map-get($map: $color, $key:"verde");
+        font-weight: 550;
+    }
+}
+
+.tarjeta{
+    margin: 10px;
 }

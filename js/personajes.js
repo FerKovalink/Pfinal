@@ -56,8 +56,8 @@ function validPjs(event) {
 
     const valPj = personajes.some((personaje) => personaje.pj === pj)
 
-    if (personajes.length > 5) {
-        cartelPjs("Solo puedes crear hasta 6 personajes")
+    if (personajes.length > 7) {
+        cartelPjs("Solo puedes crear hasta 8 personajes")
     } else {
         if (!valPj) {
             let nuevoPj = new Personaje(pj, raza, des, img)
@@ -85,6 +85,8 @@ function cartelPjs(mensaje) {
 }
 
 function mostrarPjs(personaje) {
+
+    verPjs.innerHTML = ""
     verPjs.style.margin = '60px'
     const card = document.createElement("div")
     card.id = `card-${personaje.pj}`
@@ -105,29 +107,29 @@ function verMinis() {
     minis.innerHTML = ""
     personajes.forEach((personaje) => {
         let minisCreadas = document.createElement("div")
-        minisCreadas.className = "col-md-4 mt-3"
+        minisCreadas.className = "contenedor"
         minisCreadas.id = `minisCreadas-${personaje.pj}`
         minisCreadas.innerHTML = `
-              <div class="card">
-                  <div class="card-body">
-                  <p class="card-text">ID:
-                      <b>${personaje.pj}</b>
-                  </p>
-                  <p class="card-text">Nombre:
-                      <b>${personaje.raza}</b>
-                  </p>
-                  <p class="card-text">Precio compra:
-                      <b>${personaje.des}</b>
-                  </p>
-                  </div>
-                  <div class="card-footer">
-                  <button class="btn btn-primary" id="btnDel-${personaje.pj}" >Eliminar</button>
-                  </div>
-              </div>`
+            <div class="tarjeta">
+                <div class="imgBx">
+                    <img src="${personaje.img}">
+                </div>
+                <div class="pj">
+                    <h2>${personaje.pj}</h2>
+                    <div class="raza">
+                        <h3>${personaje.raza}</h3>
+                    </div>
+                    <div class="descript">
+                        <h3>${personaje.des}</h3>
+                    </div>
+                    <button class="btn btn-primary" id="btnDel-${personaje.pj}">Eliminar</button>
+                    <button class="btn btn-primary" id="">Comprar</button>
+                </div>
+            </div>`
 
         minis.append(minisCreadas)
 
-        let btnDel = document.getElementById(`card-${personaje.pj}`)
+        let btnDel = document.getElementById(`minisCreadas-${personaje.pj}`)
         btnDel.onclick = () => delPj(personaje.pj)
     })
 }
@@ -144,11 +146,11 @@ function delPj(pj) {
 
 function updatePjs() {
     let pjJSON = JSON.stringify(personajes)
-    localStorage.setItem("personajes", pjJSON)
+    sessionStorage.setItem("personajes", pjJSON)
 }
 
 function getPjs() {
-    let pjJSON = localStorage.getItem("personajes")
+    let pjJSON = sessionStorage.getItem("personajes")
     if (pjJSON) {
         personajes.JSON.parse(pjJSON)
         verMinis()
@@ -156,7 +158,7 @@ function getPjs() {
 }
 
 function delAll() {
-    localStorage.clear()
+    sessionStorage.clear()
     personajes = []
     verMinis()
 }
