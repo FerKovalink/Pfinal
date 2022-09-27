@@ -140,7 +140,7 @@ function verMinis() {
         let btnDel = document.getElementById(`minisCreadas-${personaje.pj}`)
         btnDel.onclick = () => delPj(personaje.pj)
 
-        let bg = document.getElementById(`minisCreadas-${personaje.pj}`)
+        bg = document.getElementById(`minisCreadas-${personaje.pj}`)
         if (bgg == 1) {
             bg.style.backgroundImage = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/dm.jpg?raw=true')"
         } else if (bgg == 2) {
@@ -153,6 +153,24 @@ function verMinis() {
             bg.style.backgroundImage = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/dragon4.png?raw=true')"
         }
     })
+
+    // personajes.forEach((personaje) => {
+    //     let bg = document.getElementById(`minisCreadas-${personaje.pj}`)
+    //     if (personaje.img === bgg) {
+    //         bg.style.backgroundImage = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/dm.jpg?raw=true')"
+    //     } else if (personaje.img === bgg) {
+    //         bg.style.backgroundImage = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/enanoo.jpg?raw=true')"
+    //     } else if (personaje.img === bgg) {
+    //         bg.style.backgroundImage = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/mago.png?raw=true')"
+    //     } else if (personaje.img === bgg) {
+    //         bg.style.backgroundImage = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/humano.jpg?raw=true')"
+    //     } else if (personaje.img === bgg) {
+    //         bg.style.backgroundImage = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/dragon4.png?raw=true')"
+    //     }
+
+    //     minis.append(bg)
+
+    // })
 }
 
 function delPj(pj) {
@@ -165,17 +183,17 @@ function delPj(pj) {
     verMinis()
 }
 
-function updatePjs() {
-    let pjJSON = JSON.stringify(personajes)
-    sessionStorage.setItem("personajes", pjJSON)
-}
-
 function getPjs() {
     let pjJSON = sessionStorage.getItem("personajes")
     if (pjJSON) {
         personajes.JSON.parse(pjJSON)
         verMinis()
     }
+}
+
+function updatePjs() {
+    let pjJSON = JSON.stringify(personajes)
+    sessionStorage.setItem("personajes", pjJSON)
 }
 
 function delAll() {
