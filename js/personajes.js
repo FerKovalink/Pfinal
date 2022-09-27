@@ -50,12 +50,16 @@ function validPjs(event) {
         bgg = 1
     } else if (imgPj == 2) {
         img = "https://github.com/FerKovalink/d-d/blob/master/img/pjs/chulen.png?raw=true"
+        bgg = 2
     } else if (imgPj == 3) {
         img = "https://github.com/FerKovalink/d-d/blob/master/img/pjs/pants.png?raw=true"
+        bgg = 3
     } else if (imgPj == 4) {
         img = "https://github.com/FerKovalink/d-d/blob/master/img/pjs/talon.png?raw=true"
+        bgg = 4
     } else if (imgPj == 5) {
         img = "https://github.com/FerKovalink/d-d/blob/master/img/pjs/drak.png?raw=true"
+        bgg = 5
     }
 
     const valPj = personajes.some((personaje) => personaje.pj === pj)
@@ -146,13 +150,12 @@ function verMinis() {
     } else if( bgg == 2){
         bg.style.backgroundImage = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/enano.jpg?raw=true')"
     } else if( bgg == 3){
-        bg.style.backgroundImage = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/enano.jpg?raw=true')"
+        bg.style.backgroundImage = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/mago.png?raw=true')"
     } else if( bgg == 4){
         bg.style.backgroundImage = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/humano.jpg?raw=true')"
     } else if( bgg == 5){
         bg.style.backgroundImage = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/enano.jpg?raw=true')"
     }
-
 }
 
 function delPj(pj) {
