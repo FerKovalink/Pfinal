@@ -148,7 +148,7 @@ function verMinis() {
         } else if (bgg == 4) {
             bg.style.backgroundImage = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/humano.jpg?raw=true')"
         } else if (bgg == 5) {
-            bg.style.backgroundImage = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/dragon3.png?raw=true')"
+            bg.style.backgroundImage = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/dragon4.png?raw=true')"
         }
 
 
