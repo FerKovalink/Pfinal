@@ -7,14 +7,14 @@
     margin-right: 300px;
 
     h2 {
-        color: white;
+        color: map-get($map: $color, $key:"blanco");
         margin-bottom: 20px;
         font-size: 2.5rem;
         font-family: map-get($map: $fonts, $key:'nav');
     }
 
     label {
-        color: white;
+        color: map-get($map: $color, $key:"blanco");
         font-size: 1.2rem;
         font-family: map-get($map: $fonts, $key:'bit');
     }
@@ -28,14 +28,14 @@
 .registro {
 
     h2 {
-        color: white;
+        color: map-get($map: $color, $key:"blanco");
         margin-bottom: 20px;
         font-size: 2.5rem;
         font-family: map-get($map: $fonts, $key:'nav');
     }
 
     label {
-        color: white;
+        color: map-get($map: $color, $key:"blanco");
         font-size: 1.2rem;
         font-family: map-get($map: $fonts, $key:'bit');
     }

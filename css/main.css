@@ -161,13 +161,13 @@ nav ul li a:hover, nav ul li a:focus {
   margin-right: 300px;
 }
 .login h2 {
-  color: white;
+  color: #EEEEEE;
   margin-bottom: 20px;
   font-size: 2.5rem;
   font-family: "Bungee Spice", cursive;
 }
 .login label {
-  color: white;
+  color: #EEEEEE;
   font-size: 1.2rem;
   font-family: "Press Start 2P", cursive;
 }
@@ -177,13 +177,13 @@ nav ul li a:hover, nav ul li a:focus {
 }
 
 .registro h2, #formPer h2 {
-  color: white;
+  color: #EEEEEE;
   margin-bottom: 20px;
   font-size: 2.5rem;
   font-family: "Bungee Spice", cursive;
 }
 .registro label, #formPer label {
-  color: white;
+  color: #EEEEEE;
   font-size: 1.2rem;
   font-family: "Press Start 2P", cursive;
 }
