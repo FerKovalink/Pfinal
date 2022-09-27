@@ -7,6 +7,7 @@ let inDes
 let inImg
 let verPjs
 let cartelPj
+let minis
 
 class Personaje {
     constructor(pj, raza, des, img) {
@@ -26,6 +27,7 @@ function initElementos() {
     inImg = document.getElementById("inImg")
     verPjs = document.getElementById("verPjs")
     cartelPj = document.getElementById("cartelPj")
+    minis = document.getElementById("minis")
 }
 
 function initEventos() {
@@ -42,16 +44,15 @@ function validPjs(event) {
 
     if (imgPj == 1) {
         img = "https://github.com/FerKovalink/d-d/blob/master/img/pjs/dm.png?raw=true"
-    } else if(imgPj == 2) {
+    } else if (imgPj == 2) {
         img = "https://github.com/FerKovalink/d-d/blob/master/img/pjs/chulen.png?raw=true"
-    } else if(imgPj == 3) {
+    } else if (imgPj == 3) {
         img = "https://github.com/FerKovalink/d-d/blob/master/img/pjs/pants.png?raw=true"
-    } else if(imgPj == 4) {
+    } else if (imgPj == 4) {
         img = "https://github.com/FerKovalink/d-d/blob/master/img/pjs/talon.png?raw=true"
-    } else if(imgPj == 5) {
+    } else if (imgPj == 5) {
         img = "https://github.com/FerKovalink/d-d/blob/master/img/pjs/drak.png?raw=true"
     }
-
 
     const valPj = personajes.some((personaje) => personaje.pj === pj)
 
@@ -61,10 +62,12 @@ function validPjs(event) {
         if (!valPj) {
             let nuevoPj = new Personaje(pj, raza, des, img)
 
+            mostrarPjs(nuevoPj)
             personajes.push(nuevoPj)
             formPjs.reset()
             updatePjs()
-            mostrarPjs()
+            verMinis()
+
         } else {
             cartelPjs("El nombre ya esta en uso, elije otro")
         }
@@ -81,22 +84,48 @@ function cartelPjs(mensaje) {
     }, 2000)
 }
 
-function mostrarPjs() {
+function mostrarPjs(personaje) {
+    verPjs.style.margin = '60px'
+    const card = document.createElement("div")
+    card.id = `card-${personaje.pj}`
+    card.innerHTML = `
+            <div class="product-card">
+            <div class="product-image">
+                <img src=${personaje.img}>
+            </div>
+            <div class="product-details">
+                <h2>${personaje.pj}</h2>    
+                <h3>${personaje.raza}</h3>
+                <p>${personaje.des}</p>
+            </div>`
+    verPjs.append(card)
+}
+
+function verMinis() {
+    minis.innerHTML = ""
     personajes.forEach((personaje) => {
-        const card = document.createElement("div")
-        card.id = `card-${personaje.pj}`
-        card.innerHTML = `
-                <div class="product-card">
-                <div class="product-image">
-                    <img src=${personaje.img}>
-                </div>
-                <div class="product-details">
-                    <h2>${personaje.pj}</h2>    
-                    <h3>${personaje.raza}</h3>
-                    <p>${personaje.des}</p>
-                    <button class="btn btn-primary" id="btnDel-${personaje.pj}" >Eliminar</button>
-                </div>`
-        verPjs.append(card)
+        let minisCreadas = document.createElement("div")
+        minisCreadas.className = "col-md-4 mt-3"
+        minisCreadas.id = `minisCreadas-${personaje.pj}`
+        minisCreadas.innerHTML = `
+              <div class="card">
+                  <div class="card-body">
+                  <p class="card-text">ID:
+                      <b>${personaje.pj}</b>
+                  </p>
+                  <p class="card-text">Nombre:
+                      <b>${personaje.raza}</b>
+                  </p>
+                  <p class="card-text">Precio compra:
+                      <b>${personaje.des}</b>
+                  </p>
+                  </div>
+                  <div class="card-footer">
+                  <button class="btn btn-primary" id="btnDel-${personaje.pj}" >Eliminar</button>
+                  </div>
+              </div>`
+
+        minis.append(minisCreadas)
 
         let btnDel = document.getElementById(`card-${personaje.pj}`)
         btnDel.onclick = () => delPj(personaje.pj)
@@ -110,7 +139,7 @@ function delPj(pj) {
     personajes.splice(indexPj, 1)
     borrarPj.remove()
     updatePjs()
-    mostrarPjs()
+    verMinis()
 }
 
 function updatePjs() {
@@ -122,29 +151,20 @@ function getPjs() {
     let pjJSON = localStorage.getItem("personajes")
     if (pjJSON) {
         personajes.JSON.parse(pjJSON)
-        mostrarPjs()
+        verMinis()
     }
 }
 
 function delAll() {
     localStorage.clear()
     personajes = []
-    mostrarPjs()
-}
-
-function armar() {
-    let nuevoPjs = new Personaje("Dungeon Master", "DM", "Patt creador, director y guionista de las aventuras. Cabeza y parte del team", "img/pjs/dm.png")
-    personajes.push(nuevoPjs)
-    updatePjs()
-
+    verMinis()
 }
 
 function main() {
     initElementos()
     initEventos()
     getPjs()
-
-
 }
 
 main()
