@@ -135,27 +135,28 @@ function verMinis() {
                     <button class="btn btn-primary" id="">Comprar</button>
                 </div>
             </div>`
-
-
+        
         minis.append(minisCreadas)
+
+        bg = document.querySelector('#tarjeta')
+        if (bgg == 1) {
+            bg.style.backgroundImage = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/dmm.jpg?raw=true')"
+        } else if (bgg == 2) {
+            bg.style.backgroundImage = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/enano.jpg?raw=true')"
+        } else if (bgg == 3) {
+            bg.style.backgroundImage = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/mago.png?raw=true')"
+        } else if (bgg == 4) {
+            bg.style.backgroundImage = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/humano.jpg?raw=true')"
+        } else if (bgg == 5) {
+            bg.style.backgroundImage = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/dragon.jpg?raw=true')"
+        }
 
 
         let btnDel = document.getElementById(`minisCreadas-${personaje.pj}`)
         btnDel.onclick = () => delPj(personaje.pj)
     })
 
-    bg = document.querySelector('#tarjeta:before')
-    if (bgg == 1) {
-        bg.style.backgroundImage = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/enano.jpg?raw=true')"
-    } else if( bgg == 2){
-        bg.style.backgroundImage = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/enano.jpg?raw=true')"
-    } else if( bgg == 3){
-        bg.style.backgroundImage = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/mago.png?raw=true')"
-    } else if( bgg == 4){
-        bg.style.backgroundImage = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/humano.jpg?raw=true')"
-    } else if( bgg == 5){
-        bg.style.backgroundImage = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/dragon.jpg?raw=true')"
-    }
+
 }
 
 function delPj(pj) {
