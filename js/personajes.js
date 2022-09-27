@@ -140,7 +140,7 @@ function verMinis() {
         let btnDel = document.getElementById(`minisCreadas-${personaje.pj}`)
         btnDel.onclick = () => delPj(personaje.pj)
 
-        bg = document.getElementById(`minisCreadas-${personaje.pj}`)
+        let bg = document.getElementById(`minisCreadas-${personaje.pj}`)
         if (bgg == 1) {
             bg.style.backgroundImage = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/dm.jpg?raw=true')"
         } else if (bgg == 2) {
