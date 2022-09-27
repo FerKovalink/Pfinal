@@ -65,7 +65,7 @@ function validPjs(event) {
     const valPj = personajes.some((personaje) => personaje.pj === pj)
 
     if (personajes.length > 7) {
-        cartelPjs("Solo puedes crear hasta 8 personajes")
+        cartelPjs("Solo puedes crear 8 personajes")
     } else {
         if (!valPj) {
             let nuevoPj = new Personaje(pj, raza, des, img)
@@ -93,7 +93,6 @@ function cartelPjs(mensaje) {
 }
 
 function mostrarPjs(personaje) {
-
     verPjs.innerHTML = ""
     verPjs.style.margin = '60px'
     const card = document.createElement("div")
@@ -135,13 +134,12 @@ function verMinis() {
                     <button class="btn btn-primary" id="">Comprar</button>
                 </div>
             </div>`
-        
+
         minis.append(minisCreadas)
 
         let btnDel = document.getElementById(`minisCreadas-${personaje.pj}`)
         btnDel.onclick = () => delPj(personaje.pj)
-        
-        // bg = document.querySelector(`#minisCreadas-${personaje.pj} #tarjeta`)
+
         bg = document.getElementById(`minisCreadas-${personaje.pj}`)
         if (bgg == 1) {
             bg.style.backgroundImage = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/dm.jpg?raw=true')"
@@ -154,9 +152,8 @@ function verMinis() {
         } else if (bgg == 5) {
             bg.style.backgroundImage = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/dragon4.png?raw=true')"
         }
-
+        minis.append(minisCreadas)
     })
-
 }
 
 function delPj(pj) {
