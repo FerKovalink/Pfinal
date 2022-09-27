@@ -8,6 +8,8 @@ let inImg
 let verPjs
 let cartelPj
 let minis
+let imgPj
+let tarjeta
 
 class Personaje {
     constructor(pj, raza, des, img) {
@@ -28,6 +30,7 @@ function initElementos() {
     verPjs = document.getElementById("verPjs")
     cartelPj = document.getElementById("cartelPj")
     minis = document.getElementById("minis")
+    tarjeta = document.getElementById("tarjeta")
 }
 
 function initEventos() {
@@ -39,7 +42,7 @@ function validPjs(event) {
     let pj = inPj.value
     let raza = inRaza.value
     let des = inDes.value
-    let imgPj = inImg.value
+    imgPj = inImg.value
     let img
 
     if (imgPj == 1) {
@@ -104,13 +107,14 @@ function mostrarPjs(personaje) {
 }
 
 function verMinis() {
+    minis.style.padding = '10px'
     minis.innerHTML = ""
     personajes.forEach((personaje) => {
         let minisCreadas = document.createElement("div")
         minisCreadas.className = "contenedor"
         minisCreadas.id = `minisCreadas-${personaje.pj}`
         minisCreadas.innerHTML = `
-            <div class="tarjeta">
+            <div id="tarjeta">
                 <div class="imgBx">
                     <img src="${personaje.img}">
                 </div>
@@ -127,11 +131,17 @@ function verMinis() {
                 </div>
             </div>`
 
+            if (imgPj == 1) {
+                tarjeta.style.backgroundImage = 'url("img/minis/enano.jpg")'
+            }
+
         minis.append(minisCreadas)
 
         let btnDel = document.getElementById(`minisCreadas-${personaje.pj}`)
         btnDel.onclick = () => delPj(personaje.pj)
     })
+
+   
 }
 
 function delPj(pj) {
