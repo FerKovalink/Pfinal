@@ -309,7 +309,6 @@ nav ul li a:hover, nav ul li a:focus {
   height: 450px;
   background: #232323;
   overflow: hidden;
-  margin: 10px;
   background: transparent !important;
 }
 
@@ -423,9 +422,10 @@ nav ul li a:hover, nav ul li a:focus {
 .raza h3 {
   font-family: "Satisfy", cursive;
   text-transform: uppercase;
+  margin-left: 150px;
   font-size: 2rem;
   color: #FD7014;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .descript h3 {

@@ -112,7 +112,7 @@ function mostrarPjs(personaje) {
 }
 
 function verMinis() {
-    minis.style.padding = '10px'
+    minis.style.padding = '20px'
     minis.innerHTML = ""
     personajes.forEach((personaje) => {
         let minisCreadas = document.createElement("div")
