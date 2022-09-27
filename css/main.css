@@ -299,15 +299,20 @@ nav ul li a:hover, nav ul li a:focus {
 
 .contenedor {
   position: relative;
+  border-radius: 40px;
+  width: 300px;
+  height: 460px;
 }
 
 .contenedor #tarjeta {
   position: relative;
-  width: 320px;
+  width: 300px;
   height: 450px;
   background: #232323;
   border-radius: 20px;
   overflow: hidden;
+  margin: 10px;
+  background: transparent !important;
 }
 
 .contenedor #tarjeta:before {
@@ -317,9 +322,6 @@ nav ul li a:hover, nav ul li a:focus {
   left: 0;
   width: 100%;
   height: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  filter: blur(1px);
   clip-path: circle(150px at 80% 20%);
   transition: 0.5s ease-in-out;
 }
@@ -433,10 +435,6 @@ nav ul li a:hover, nav ul li a:focus {
   font-size: 2rem;
   color: #0b8062;
   font-weight: 600;
-}
-
-#tarjeta {
-  margin: 10px;
 }
 
 /*# sourceMappingURL=main.css.map */
