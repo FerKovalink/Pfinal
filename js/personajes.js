@@ -112,7 +112,6 @@ function mostrarPjs(personaje) {
 }
 
 function verMinis() {
-
     minis.style.padding = '10px'
     minis.innerHTML = ""
     personajes.forEach((personaje) => {
@@ -157,7 +156,6 @@ function verMinis() {
         }
 
     })
-
 
 }
 

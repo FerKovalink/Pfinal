@@ -148,7 +148,6 @@ nav ul li a:hover, nav ul li a:focus {
   flex-direction: column;
   background-color: #171717;
   width: 100%;
-  padding-top: 20px;
 }
 
 .parallax {
@@ -309,7 +308,6 @@ nav ul li a:hover, nav ul li a:focus {
   width: 300px;
   height: 450px;
   background: #232323;
-  border-radius: 20px;
   overflow: hidden;
   margin: 10px;
   background: transparent !important;
