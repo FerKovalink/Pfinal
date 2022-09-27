@@ -142,7 +142,7 @@ function verMinis() {
         if (bgg == 1) {
             bg.style.backgroundImage = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/dm.jpg?raw=true')"
         } else if (bgg == 2) {
-            bg.style.backgroundImage = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/enano.jpg?raw=true')"
+            bg.style.backgroundImage = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/enano2.jpg?raw=true')"
         } else if (bgg == 3) {
             bg.style.backgroundImage = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/mago.png?raw=true')"
         } else if (bgg == 4) {
