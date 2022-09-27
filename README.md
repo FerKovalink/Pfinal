@@ -1,4 +1,4 @@
 # D&D
 
 
-https://ferkovalink.github.io/d-d/index.html
+https://ferkovalink.github.io/dnd/index.html
