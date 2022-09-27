@@ -8,8 +8,8 @@ let inImg
 let verPjs
 let cartelPj
 let minis
-let imgPj
 let tarjeta
+let bgg
 
 class Personaje {
     constructor(pj, raza, des, img) {
@@ -42,11 +42,12 @@ function validPjs(event) {
     let pj = inPj.value
     let raza = inRaza.value
     let des = inDes.value
-    imgPj = inImg.value
+    let imgPj = inImg.value
     let img
 
     if (imgPj == 1) {
         img = "https://github.com/FerKovalink/d-d/blob/master/img/pjs/dm.png?raw=true"
+        bgg = 1
     } else if (imgPj == 2) {
         img = "https://github.com/FerKovalink/d-d/blob/master/img/pjs/chulen.png?raw=true"
     } else if (imgPj == 3) {
@@ -131,17 +132,27 @@ function verMinis() {
                 </div>
             </div>`
 
-            if (imgPj == 1) {
-                tarjeta.style.backgroundImage = 'url("img/minis/enano.jpg")'
-            }
 
         minis.append(minisCreadas)
+
 
         let btnDel = document.getElementById(`minisCreadas-${personaje.pj}`)
         btnDel.onclick = () => delPj(personaje.pj)
     })
 
-   
+    bg = document.querySelector('#tarjeta:before')
+    if (bgg == 1) {
+        bg.style.backgroundImage = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/enano.jpg?raw=true')"
+    } else if( bgg == 2){
+        bg.style.backgroundImage = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/enano.jpg?raw=true')"
+    } else if( bgg == 3){
+        bg.style.backgroundImage = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/enano.jpg?raw=true')"
+    } else if( bgg == 4){
+        bg.style.backgroundImage = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/enano.jpg?raw=true')"
+    } else if( bgg == 5){
+        bg.style.backgroundImage = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/enano.jpg?raw=true')"
+    }
+
 }
 
 function delPj(pj) {
