@@ -49,16 +49,16 @@ function validPjs(event) {
         img = "https://github.com/FerKovalink/d-d/blob/master/img/pjs/dm.png?raw=true"
         bgg = 1
     } else if (imgPj == 2) {
-        img = "https://github.com/FerKovalink/d-d/blob/master/img/pjs/chulen.png?raw=true"
+        img = "https://github.com/FerKovalink/d-d/blob/master/img/pjs/chulen2.png?raw=true"
         bgg = 2
     } else if (imgPj == 3) {
-        img = "https://github.com/FerKovalink/d-d/blob/master/img/pjs/pants.png?raw=true"
+        img = "https://github.com/FerKovalink/d-d/blob/master/img/pjs/pants2.png?raw=true"
         bgg = 3
     } else if (imgPj == 4) {
-        img = "https://github.com/FerKovalink/d-d/blob/master/img/pjs/talon.png?raw=true"
+        img = "https://github.com/FerKovalink/d-d/blob/master/img/pjs/talon2.png?raw=true"
         bgg = 4
     } else if (imgPj == 5) {
-        img = "https://github.com/FerKovalink/d-d/blob/master/img/pjs/drak.png?raw=true"
+        img = "https://github.com/FerKovalink/d-d/blob/master/img/pjs/drak2.png?raw=true"
         bgg = 5
     }
 
