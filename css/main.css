@@ -5,16 +5,6 @@
 /* main {
     	@include box-flex(center, center, column)
 	} */
-/*
-main{
-	@include medias(tablet){
-		background-color:deeppink;
-	}
-	@include medias(desktop){
-		background-color: #af40f6;
-	}
-}
-*/
 /* .product-base {
     @extend %div-base;
 }*/

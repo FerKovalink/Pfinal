@@ -48,7 +48,6 @@
 
 #formNew {
     display: none;
-
 }
 
 #cartelLog {
@@ -108,7 +107,6 @@
 #verPjs {
     @extend %pjCard;
     width: 100%;
-
 }
 
 .btnCartel {
@@ -146,7 +144,6 @@
     background-image: url("https://github.com/FerKovalink/d-d/blob/master/img/index/ar.png?raw=true");
     background-position: center;
 }
-
 
 #minis {
     display: flex;
@@ -216,7 +213,6 @@
 .contenedor #tarjeta:hover .imgBx {
     top: 0%;
     transform: translateY(0%);
-
 }
 
 .contenedor #tarjeta .imgBx img {
@@ -271,7 +267,6 @@
     transition-delay: 0.6s;
 }
 
-
 .contenedor #tarjeta .pj a button {
     display: inline-block;
     margin-top: 10px;
@@ -284,7 +279,6 @@
     opacity: 1;
     transform: translateY(0px);
     transition-delay: 0.75s;
-
 }
 
 .raza {

@@ -152,7 +152,6 @@ function verMinis() {
         } else if (bgg == 5) {
             bg.style.backgroundImage = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/dragon4.png?raw=true')"
         }
-        minis.append(minisCreadas)
     })
 }
 
