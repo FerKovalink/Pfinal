@@ -114,7 +114,7 @@ function verMinis() {
     minis.style.padding = '20px'
     minis.innerHTML = ""
     personajes.forEach((personaje) => {
-        const minisCreadas = document.createElement("div")
+        let minisCreadas = document.createElement("div")
         minisCreadas.className = "contenedor"
         minisCreadas.id = `minisCreadas-${personaje.pj}`
         minisCreadas.innerHTML = `
@@ -134,14 +134,13 @@ function verMinis() {
                     <button class="btn btn-primary" id="">Comprar</button>
                 </div>
             </div>`
-        
+
         minis.append(minisCreadas)
 
         let btnDel = document.getElementById(`minisCreadas-${personaje.pj}`)
         btnDel.onclick = () => delPj(personaje.pj)
 
-        
-        let bg = document.getElementById(`minisCreadas-${personaje.pj}`)
+        bg = document.getElementById(`minisCreadas-${personaje.pj}`)
         if (bgg == 1) {
             bg.style.backgroundImage = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/dm.jpg?raw=true')"
         } else if (bgg == 2) {
@@ -153,8 +152,6 @@ function verMinis() {
         } else if (bgg == 5) {
             bg.style.backgroundImage = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/dragon4.png?raw=true')"
         }
-
-
     })
 
     // personajes.forEach((personaje) => {
@@ -177,18 +174,13 @@ function verMinis() {
 }
 
 function delPj(pj) {
-    const borrarPj = document.getElementById(`card-${pj}`)
-    const indexPj = personajes.findIndex((personaje) => personaje.pj === pj)
+    let borrarPj = document.getElementById(`card-${pj}`)
+    let indexPj = personajes.findIndex((personaje) => personaje.pj === pj)
 
     personajes.splice(indexPj, 1)
     borrarPj.remove()
     updatePjs()
     verMinis()
-}
-
-function updatePjs() {
-    let pjJSON = JSON.stringify(personajes)
-    sessionStorage.setItem("personajes", pjJSON)
 }
 
 function getPjs() {
@@ -197,6 +189,11 @@ function getPjs() {
         personajes.JSON.parse(pjJSON)
         verMinis()
     }
+}
+
+function updatePjs() {
+    let pjJSON = JSON.stringify(personajes)
+    sessionStorage.setItem("personajes", pjJSON)
 }
 
 function delAll() {

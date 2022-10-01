@@ -108,16 +108,17 @@ function validLog(event) {
     }
 }
 
-function updateUser() {
-    let userJSON = JSON.stringify(cuentas)
-    localStorage.setItem("usuarios", userJSON)
-}
 
 function getUser() {
     let userJSON = localStorage.getItem("usuarios")
     if (userJSON) {
         cuentas = JSON.parse(userJSON)
     }
+}
+
+function updateUser() {
+    let userJSON = JSON.stringify(cuentas)
+    localStorage.setItem("usuarios", userJSON)
 }
 
 function main() {

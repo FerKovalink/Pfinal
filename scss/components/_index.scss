@@ -1,6 +1,5 @@
 nav {
   background: map-get($map: $color, $key: "gris");
-
   ul {
     li {
       a {
@@ -51,7 +50,7 @@ nav {
   }
 }
 
-#mapa{
+.mapa{
   @include box-flex(center, center, column);
   width: 100%;
   background-color: map-get($map: $color, $key:"negro");
@@ -70,7 +69,7 @@ nav {
   }
 }
 
-#logon {
+.logon {
   @include box-flex(center, center, column);
   background-color: map-get($map: $color, $key:"negro");
   width: 100%;
