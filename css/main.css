@@ -121,7 +121,7 @@ nav ul li a:hover, nav ul li a:focus {
   margin: 20px 0;
 }
 
-.mapa {
+#mapa {
   display: flex !important;
   justify-content: center;
   align-items: center;
@@ -129,19 +129,19 @@ nav ul li a:hover, nav ul li a:focus {
   width: 100%;
   background-color: #171717;
 }
-.mapa video {
+#mapa video {
   width: 1280px;
   height: 720px;
   border-radius: 60px;
   margin-bottom: 50px;
 }
-.mapa h4 {
+#mapa h4 {
   font-family: "Bungee Spice", cursive;
   font-size: 5rem;
   padding: 1%;
 }
 
-.logon {
+#logon {
   display: flex !important;
   justify-content: center;
   align-items: center;
