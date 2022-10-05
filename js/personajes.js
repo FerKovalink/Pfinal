@@ -85,7 +85,7 @@ function validPjs(event) {
 function cartelPjs(mensaje) {
     const cartel = document.createElement("div")
     cartel.className = "alert"
-    cartel.innerHTML = `<h3> ${mensaje} </h3>`
+    cartel.innerHTML = `<h3> ${mensaje}</h3>`
     cartelPj.append(cartel)
     setTimeout(function () {
         cartel.style.display = "none"
@@ -131,7 +131,6 @@ function verMinis() {
                         <h3>${personaje.des}</h3>
                     </div>
                     <button class="btn btn-primary" id="btnDel-${personaje.pj}">Eliminar</button>
-                    <button class="btn btn-primary" id="">Comprar</button>
                 </div>
             </div>`
 
@@ -140,7 +139,7 @@ function verMinis() {
         let btnDel = document.getElementById(`minisCreadas-${personaje.pj}`)
         btnDel.onclick = () => delPj(personaje.pj)
 
-        bg = document.getElementById(`minisCreadas-${personaje.pj}`)
+        let bg = document.getElementById(`minisCreadas-${personaje.pj}`)
         if (bgg == 1) {
             bg.style.backgroundImage = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/dm.jpg?raw=true')"
         } else if (bgg == 2) {
@@ -152,6 +151,8 @@ function verMinis() {
         } else if (bgg == 5) {
             bg.style.backgroundImage = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/dragon4.png?raw=true')"
         }
+
+        minis.append(bg)
     })
 
     // personajes.forEach((personaje) => {
@@ -186,7 +187,7 @@ function delPj(pj) {
 function getPjs() {
     let pjJSON = sessionStorage.getItem("personajes")
     if (pjJSON) {
-        personajes.JSON.parse(pjJSON)
+        personajes = JSON.parse(pjJSON)
         verMinis()
     }
 }
@@ -194,6 +195,7 @@ function getPjs() {
 function updatePjs() {
     let pjJSON = JSON.stringify(personajes)
     sessionStorage.setItem("personajes", pjJSON)
+     
 }
 
 function delAll() {

@@ -10,9 +10,11 @@ let inApellido
 let inEdad
 let inMail
 let cartelLog
+let sweet
 let btnForm
 let formArt
 let cuentasUser
+let btnSwal
 
 class Login {
     constructor(user, pass, nombre, apellido, edad, mail) {
@@ -40,12 +42,15 @@ function initElements() {
     btnForm = document.getElementById('btnForm')
     formArt = document.getElementById('formArt')
     cuentasUser = document.getElementById('cuentasUser')
+    btnSwal = document.getElementById("btnSwal")
+
 }
 
 function initEvents() {
     formLogin.onsubmit = (event) => validLog(event)
     formNew.onsubmit = (event) => validNew(event)
     btnForm.onclick = mostrarForm
+    btnSwal.onclick = alertS
 
 }
 
@@ -54,15 +59,26 @@ function mostrarForm() {
     formNew.style.display = "block"
 }
 
-function cartel(mensaje) {
-    const cartel = document.createElement("div")
-    cartel.className = "alert"
-    cartel.innerHTML = `<h3> ${mensaje} </h3>`
-    cartelLog.append(cartel)
-    setTimeout(function () {
-        cartel.style.display = "none"
-    }, 2000)
+function alertS(icono, mensaje) {
+    const cartel = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+    })
+
+    cartel.fire({
+        icon: `${icono}`,
+        title: `${mensaje}`,
+
+    })
 }
+
 
 function validNew(event) {
     event.preventDefault()
@@ -76,7 +92,7 @@ function validNew(event) {
     const valUser = cuentas.some((cuenta) => cuenta.user === user)
     const valMail = cuentas.some((cuenta) => cuenta.mail === mail)
     if (valMail || valUser) {
-        cartel("E-mail o usuario registrado, intente con otro")
+        alertS("error", "E-mail o usuario registrado, intente con otro")
     } else {
         let nuevoUser = new Login(user, pass, nombre, apellido, edad, mail)
 
@@ -84,7 +100,7 @@ function validNew(event) {
         formNew.reset()
         updateUser()
 
-        cartel("Cuenta creada")
+        alertS("success", "Cuenta creada")
     }
 }
 
@@ -97,14 +113,15 @@ function validLog(event) {
     const valPass = cuentas.some((cuentas) => cuentas.pass === pass)
 
     if (valUser && valPass) {
+        alertS("info", "Usuario correcto")
         const cartel = document.createElement("div")
         cartel.className = "alert"
-        cartel.innerHTML = `<h3>Bienvenido ${user} </h3>`
+        cartel.innerHTML = `<h3>Bienvenido ${user}</h3>`
         cartelLog.append(cartel)
         cuentasUser.style.display = "none"
         formPer.style.display = "block"
     } else {
-        cartel("Datos incorrectos")
+        alertS("error", "Datos incorrectos")
     }
 }
 
