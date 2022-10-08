@@ -64,7 +64,7 @@ function alertS(icono, mensaje) {
         toast: true,
         position: 'top-end',
         showConfirmButton: false,
-        timer: 3000,
+        timer: 2500,
         timerProgressBar: true,
         didOpen: (toast) => {
             toast.addEventListener('mouseenter', Swal.stopTimer)
@@ -75,7 +75,6 @@ function alertS(icono, mensaje) {
     cartel.fire({
         icon: `${icono}`,
         title: `${mensaje}`,
-
     })
 }
 

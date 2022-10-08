@@ -149,6 +149,10 @@ nav ul li a:hover, nav ul li a:focus {
   background-size: cover;
 }
 
+.estilo {
+  font-size: 2rem;
+}
+
 .ingreso {
   display: flex !important;
   justify-content: center;
@@ -274,7 +278,7 @@ nav ul li a:hover, nav ul li a:focus {
 }
 
 #minis {
-  display: flex;
+  display: none;
   justify-content: space-around;
   flex-wrap: wrap;
   flex-direction: row;

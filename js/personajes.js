@@ -10,13 +10,15 @@ let cartelPj
 let minis
 let tarjeta
 let bgg
+let btnMostrar
 
 class Personaje {
-    constructor(pj, raza, des, img) {
+    constructor(pj, raza, des, img, cardBg) {
         this.pj = pj
         this.raza = raza.toUpperCase()
         this.des = des
         this.img = img
+        this.cardBg = cardBg
     }
 }
 
@@ -31,6 +33,7 @@ function initElementos() {
     cartelPj = document.getElementById("cartelPj")
     minis = document.getElementById("minis")
     tarjeta = document.getElementById("tarjeta")
+    btnMostrar = document.getElementById("btnMostrar")
 }
 
 function initEventos() {
@@ -44,22 +47,23 @@ function validPjs(event) {
     let des = inDes.value
     let imgPj = inImg.value
     let img
+    let cardBg
 
     if (imgPj == 1) {
         img = "https://github.com/FerKovalink/d-d/blob/master/img/pjs/dm2.png?raw=true"
-        bgg = 1
+        cardBg = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/dm.jpg?raw=true')"
     } else if (imgPj == 2) {
         img = "https://github.com/FerKovalink/d-d/blob/master/img/pjs/chulen2.png?raw=true"
-        bgg = 2
+        cardBg = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/enanoo.jpg?raw=true')"
     } else if (imgPj == 3) {
         img = "https://github.com/FerKovalink/d-d/blob/master/img/pjs/pants2.png?raw=true"
-        bgg = 3
+        cardBg = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/mago.png?raw=true')"
     } else if (imgPj == 4) {
         img = "https://github.com/FerKovalink/d-d/blob/master/img/pjs/talon2.png?raw=true"
-        bgg = 4
+        cardBg = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/humano.jpg?raw=true')"
     } else if (imgPj == 5) {
         img = "https://github.com/FerKovalink/d-d/blob/master/img/pjs/drak2.png?raw=true"
-        bgg = 5
+        cardBg = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/dragon4.png?raw=true')"
     }
 
     const valPj = personajes.some((personaje) => personaje.pj === pj)
@@ -68,12 +72,13 @@ function validPjs(event) {
         cartelPjs("Solo puedes crear 8 personajes")
     } else {
         if (!valPj) {
-            let nuevoPj = new Personaje(pj, raza, des, img)
+            let nuevoPj = new Personaje(pj, raza, des, img, cardBg)
 
             mostrarPjs(nuevoPj)
             personajes.push(nuevoPj)
             formPjs.reset()
             updatePjs()
+            minis.style.display = "flex"
             verMinis()
 
         } else {
@@ -82,10 +87,29 @@ function validPjs(event) {
     }
 }
 
+function alertPj(icono, mensaje) {
+    const cartel = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 2500,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+    })
+
+    cartel.fire({
+        icon: `${icono}`,
+        title: `${mensaje}`,
+    })
+}
+
 function cartelPjs(mensaje) {
     const cartel = document.createElement("div")
     cartel.className = "alert"
-    cartel.innerHTML = `<h3> ${mensaje}</h3>`
+    cartel.innerHTML = `<h3>${mensaje}</h3>`
     cartelPj.append(cartel)
     setTimeout(function () {
         cartel.style.display = "none"
@@ -130,52 +154,20 @@ function verMinis() {
                     <div class="descript">
                         <h3>${personaje.des}</h3>
                     </div>
-                    <button class="btn btn-primary" id="btnDel-${personaje.pj}">Eliminar</button>
+                    <button class="btn btn-primary" id="btnDelete-${personaje.pj}">Borrar</button>
                 </div>
             </div>`
+        minisCreadas.style.backgroundImage = `${personaje.cardBg}`
 
         minis.append(minisCreadas)
 
-        let btnDel = document.getElementById(`minisCreadas-${personaje.pj}`)
-        btnDel.onclick = () => delPj(personaje.pj)
-
-        let bg = document.getElementById(`minisCreadas-${personaje.pj}`)
-        if (bgg == 1) {
-            bg.style.backgroundImage = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/dm.jpg?raw=true')"
-        } else if (bgg == 2) {
-            bg.style.backgroundImage = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/enanoo.jpg?raw=true')"
-        } else if (bgg == 3) {
-            bg.style.backgroundImage = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/mago.png?raw=true')"
-        } else if (bgg == 4) {
-            bg.style.backgroundImage = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/humano.jpg?raw=true')"
-        } else if (bgg == 5) {
-            bg.style.backgroundImage = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/dragon4.png?raw=true')"
-        }
-
-        minis.append(bg)
+        let btnDelete = document.getElementById(`minisCreadas-${personaje.pj}`)
+        btnDelete.onclick = () => deletePj(personaje.pj)
     })
-
-    // personajes.forEach((personaje) => {
-    //     let bg = document.getElementById(`minisCreadas-${personaje.pj}`)
-    //     if (personaje.img === bgg) {
-    //         bg.style.backgroundImage = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/dm.jpg?raw=true')"
-    //     } else if (personaje.img === bgg) {
-    //         bg.style.backgroundImage = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/enanoo.jpg?raw=true')"
-    //     } else if (personaje.img === bgg) {
-    //         bg.style.backgroundImage = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/mago.png?raw=true')"
-    //     } else if (personaje.img === bgg) {
-    //         bg.style.backgroundImage = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/humano.jpg?raw=true')"
-    //     } else if (personaje.img === bgg) {
-    //         bg.style.backgroundImage = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/dragon4.png?raw=true')"
-    //     }
-
-    //     minis.append(bg)
-
-    // })
 }
 
-function delPj(pj) {
-    let borrarPj = document.getElementById(`card-${pj}`)
+function deletePj(pj) {
+    let borrarPj = document.getElementById(`minisCreadas-${pj}`)
     let indexPj = personajes.findIndex((personaje) => personaje.pj === pj)
 
     personajes.splice(indexPj, 1)
@@ -195,14 +187,14 @@ function getPjs() {
 function updatePjs() {
     let pjJSON = JSON.stringify(personajes)
     sessionStorage.setItem("personajes", pjJSON)
-     
+
 }
 
-function delAll() {
-    sessionStorage.clear()
-    personajes = []
-    verMinis()
-}
+// function delAll() {
+//     sessionStorage.clear()
+//     personajes = []
+//     verMinis()
+// }
 
 function main() {
     initElementos()
