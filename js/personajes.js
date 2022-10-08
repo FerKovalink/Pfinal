@@ -37,7 +37,8 @@ function initElementos() {
 
 function initEventos() {
     formPjs.onsubmit = (event) => validPjs(event)
-    // btnMostrar.onclick = verCreados()
+    // btnMostrar.addEventListener("click", pjVer())
+    // btnMostrar.onclick = (event) => pjVer(event)
 }
 
 function validPjs(event) {
@@ -65,8 +66,8 @@ function validPjs(event) {
         img = "https://github.com/FerKovalink/d-d/blob/master/img/pjs/drak2.png?raw=true"
         cardBg = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/dragon4.png?raw=true')"
     }
-    
-    const busqueda = personajes
+
+
     const valPj = personajes.some((personaje) => personaje.pj === pj)
 
     if (personajes.length > 9) {
@@ -75,7 +76,6 @@ function validPjs(event) {
         if (!valPj) {
             let nuevoPj = new Personaje(pj, raza, des, img, cardBg)
 
-            // updatePjs()
             postServer(nuevoPj)
         } else {
             cartelPjs("El nombre ya esta en uso, elije otro")
@@ -99,6 +99,20 @@ function alertPj(icono, mensaje) {
     cartel.fire({
         icon: `${icono}`,
         title: `${mensaje}`,
+    })
+}
+
+function deleteAlert(personaje) {
+    Swal.fire({
+        icon: "question",
+        title: `¿Estas seguro que quieres eliminar a ${personaje}?`,
+        showCancelButton: true,
+        confirmButtonText: "Eliminar",
+        cancelButtonText: "Cancelar",
+    }).then((result) => {
+        if (result.isConfirmed) {
+            deletePj(personaje)
+        }
     })
 }
 
@@ -162,14 +176,27 @@ function verMinis() {
     })
 }
 
-function deletePj(pj) {
-    let borrarPj = document.getElementById(`minisCreadas-${pj}`)
-    let indexPj = personajes.findIndex((personaje) => personaje.pj === pj)
+function pjVer() {
 
-    personajes.splice(indexPj, 1)
-    borrarPj.remove()
-    updatePjs()
-    verMinis()
+    fetch("./personajes.json")
+        .then((response) => response.json())
+        .then((pj) => {
+            personajes = [...pj]
+            verMinis()
+        })
+        .catch((error) => console.log(error))
+}
+
+function deletePj(pj) {
+    deleteServer(pj)
+    // let borrarPj = document.getElementById(`minisCreadas-${pj}`)
+    // let indexPj = personajes.findIndex((personaje) => personaje.pj === pj)
+
+    // personajes.splice(indexPj, 1)
+    // borrarPj.remove()
+
+    // verMinis()
+    // cartel
 }
 
 // function getPjs() {
@@ -180,11 +207,11 @@ function deletePj(pj) {
 //     }
 // }
 
-// function updatePjs() {
-//     let pjJSON = JSON.stringify(personajes)
-//     sessionStorage.setItem("personajes", pjJSON)
+function updatePjs() {
+    let pjJSON = JSON.stringify(personajes)
+    sessionStorage.setItem("personajes", pjJSON)
 
-// }
+}
 
 // function delAll() {
 //     sessionStorage.clear()
@@ -192,14 +219,23 @@ function deletePj(pj) {
 //     verMinis()
 // }
 
-async function deleteServer(personaje){
+async function deleteServer(nombrePj) {
     try {
-        const response = await fetch("./personajes.json", {
+        const response = await fetch(`https://6340e131d1fcddf69cbef0fd.mockapi.io/api/personajes${nombrePj}`, {
             method: "DELETE",
-            body: JSON.stringify(personaje),
         })
-        personajes.splice(personaje, 1)
-        verMinis()
+        console.log(response)
+        deleteAlert(nombrePj)
+        let borrarPj = document.getElementById(`minisCreadas-${nombrePj}`)
+        let indexPj = personajes.findIndex((personaje) => personaje.pj === nombrePj)
+
+        personajes.splice(indexPj, 1)
+        borrarPj.remove()
+        updatePjs()
+
+
+
+        verPjs.innerHTML = ""
         // cartel
     } catch (error) {
         console.log(error)
@@ -208,10 +244,11 @@ async function deleteServer(personaje){
 
 async function getServer() {
     try {
-        const response = await fetch("./personajes.json")
+        const response = await fetch("https://6340e131d1fcddf69cbef0fd.mockapi.io/api/personajes")
         const pjs = await response.json()
         // console.log(pjs)
         personajes = [...pjs]
+
         verMinis()
     } catch (error) {
         console.log(error)
@@ -220,13 +257,15 @@ async function getServer() {
 
 async function postServer(personaje) {
     try {
-        const response = await fetch("./personajes.json", {
+        const response = await fetch("https://6340e131d1fcddf69cbef0fd.mockapi.io/api/personajes", {
             method: "POST",
             body: JSON.stringify(personaje),
         })
-        mostrarPjs(personaje)
+        console.log(response)
+        // personajes.push(pjVer())
         personajes.push(personaje)
         formPjs.reset()
+
         verMinis()
         minis.style.display = "flex"
         // cartel
@@ -239,6 +278,7 @@ function main() {
     initElementos()
     initEventos()
     getServer()
+    // pjVer()
 }
 
 main()
