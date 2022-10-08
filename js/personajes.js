@@ -9,7 +9,6 @@ let verPjs
 let cartelPj
 let minis
 let tarjeta
-let bgg
 let btnMostrar
 
 class Personaje {
@@ -38,7 +37,7 @@ function initElementos() {
 
 function initEventos() {
     formPjs.onsubmit = (event) => validPjs(event)
-    btnMostrar.onclick = verCreados()
+    // btnMostrar.onclick = verCreados()
 }
 
 function validPjs(event) {
@@ -69,8 +68,8 @@ function validPjs(event) {
 
     const valPj = personajes.some((personaje) => personaje.pj === pj)
 
-    if (personajes.length > 7) {
-        cartelPjs("Solo puedes crear 8 personajes")
+    if (personajes.length > 9) {
+        cartelPjs("Solo puedes crear 10 personajes")
     } else {
         if (!valPj) {
             let nuevoPj = new Personaje(pj, raza, des, img, cardBg)
@@ -197,9 +196,35 @@ function updatePjs() {
 //     verMinis()
 // }
 
+async function getServer() {
+    // fetch("./personajes.json")
+    // .then((response) => response.json())
+    // .then((pj) => {
+    //     personajes = [...pj]
+    //     verMinis()
+    // })
+    // .catch((error) => console.log(error))
+
+    try {
+        const response = await fetch("./personajes.json")
+        const pjs = await response.json()
+        console.log(pjs)
+        personajes = [...pjs]
+        verMinis()
+    } catch (error) {
+        console.log(error)
+    }
+
+}
+
+function postServer() {
+
+}
+
 function main() {
     initElementos()
     initEventos()
+    getServer()
     getPjs()
 }
 
