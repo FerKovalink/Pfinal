@@ -38,6 +38,7 @@ function initElementos() {
 
 function initEventos() {
     formPjs.onsubmit = (event) => validPjs(event)
+    btnMostrar.onclick = verCreados()
 }
 
 function validPjs(event) {
