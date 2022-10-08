@@ -31,7 +31,7 @@ function initElementos() {
     verPjs = document.getElementById("verPjs")
     cartelPj = document.getElementById("cartelPj")
     minis = document.getElementById("minis")
-    tarjeta = document.getElementById("tarjeta")
+    tarjeta = document.querySelector(".tarjeta")
     btnMostrar = document.getElementById("btnMostrar")
 }
 
@@ -65,7 +65,8 @@ function validPjs(event) {
         img = "https://github.com/FerKovalink/d-d/blob/master/img/pjs/drak2.png?raw=true"
         cardBg = "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/dragon4.png?raw=true')"
     }
-
+    
+    const busqueda = personajes
     const valPj = personajes.some((personaje) => personaje.pj === pj)
 
     if (personajes.length > 9) {
@@ -74,13 +75,8 @@ function validPjs(event) {
         if (!valPj) {
             let nuevoPj = new Personaje(pj, raza, des, img, cardBg)
 
-            mostrarPjs(nuevoPj)
-            personajes.push(nuevoPj)
-            formPjs.reset()
-            updatePjs()
-            minis.style.display = "flex"
-            verMinis()
-
+            // updatePjs()
+            postServer(nuevoPj)
         } else {
             cartelPjs("El nombre ya esta en uso, elije otro")
         }
@@ -135,14 +131,14 @@ function mostrarPjs(personaje) {
 }
 
 function verMinis() {
-    minis.style.padding = '20px'
+    minis.style.padding = '50px'
     minis.innerHTML = ""
     personajes.forEach((personaje) => {
         let minisCreadas = document.createElement("div")
         minisCreadas.className = "contenedor"
         minisCreadas.id = `minisCreadas-${personaje.pj}`
         minisCreadas.innerHTML = `
-            <div id="tarjeta">
+            <div class="tarjeta">
                 <div class="imgBx">
                     <img src="${personaje.img}">
                 </div>
@@ -176,19 +172,19 @@ function deletePj(pj) {
     verMinis()
 }
 
-function getPjs() {
-    let pjJSON = sessionStorage.getItem("personajes")
-    if (pjJSON) {
-        personajes = JSON.parse(pjJSON)
-        verMinis()
-    }
-}
+// function getPjs() {
+//     let pjJSON = sessionStorage.getItem("personajes")
+//     if (pjJSON) {
+//         personajes = JSON.parse(pjJSON)
+//         verMinis()
+//     }
+// }
 
-function updatePjs() {
-    let pjJSON = JSON.stringify(personajes)
-    sessionStorage.setItem("personajes", pjJSON)
+// function updatePjs() {
+//     let pjJSON = JSON.stringify(personajes)
+//     sessionStorage.setItem("personajes", pjJSON)
 
-}
+// }
 
 // function delAll() {
 //     sessionStorage.clear()
@@ -196,36 +192,53 @@ function updatePjs() {
 //     verMinis()
 // }
 
-async function getServer() {
-    // fetch("./personajes.json")
-    // .then((response) => response.json())
-    // .then((pj) => {
-    //     personajes = [...pj]
-    //     verMinis()
-    // })
-    // .catch((error) => console.log(error))
+async function deleteServer(personaje){
+    try {
+        const response = await fetch("./personajes.json", {
+            method: "DELETE",
+            body: JSON.stringify(personaje),
+        })
+        personajes.splice(personaje, 1)
+        verMinis()
+        // cartel
+    } catch (error) {
+        console.log(error)
+    }
+}
 
+async function getServer() {
     try {
         const response = await fetch("./personajes.json")
         const pjs = await response.json()
-        console.log(pjs)
+        // console.log(pjs)
         personajes = [...pjs]
         verMinis()
     } catch (error) {
         console.log(error)
     }
-
 }
 
-function postServer() {
-
+async function postServer(personaje) {
+    try {
+        const response = await fetch("./personajes.json", {
+            method: "POST",
+            body: JSON.stringify(personaje),
+        })
+        mostrarPjs(personaje)
+        personajes.push(personaje)
+        formPjs.reset()
+        verMinis()
+        minis.style.display = "flex"
+        // cartel
+    } catch (error) {
+        console.log(error)
+    }
 }
 
 function main() {
     initElementos()
     initEventos()
     getServer()
-    getPjs()
 }
 
 main()

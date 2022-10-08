@@ -297,7 +297,7 @@ nav ul li a:hover, nav ul li a:focus {
   height: 460px;
 }
 
-.contenedor #tarjeta {
+.contenedor .tarjeta {
   position: relative;
   width: 300px;
   height: 450px;
@@ -306,7 +306,7 @@ nav ul li a:hover, nav ul li a:focus {
   background: transparent !important;
 }
 
-.contenedor #tarjeta:before {
+.contenedor .tarjeta:before {
   content: "";
   position: absolute;
   top: 0;
@@ -317,11 +317,11 @@ nav ul li a:hover, nav ul li a:focus {
   transition: 0.5s ease-in-out;
 }
 
-.contenedor #tarjeta:hover:before {
+.contenedor .tarjeta:hover:before {
   clip-path: circle(300px at 80% -20%);
 }
 
-.contenedor #tarjeta:after {
+.contenedor .tarjeta:after {
   content: "D&D";
   position: absolute;
   top: 30%;
@@ -332,7 +332,7 @@ nav ul li a:hover, nav ul li a:focus {
   color: rgba(255, 255, 25, 0.05);
 }
 
-.contenedor #tarjeta .imgBx {
+.contenedor .tarjeta .imgBx {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -342,12 +342,12 @@ nav ul li a:hover, nav ul li a:focus {
   transition: 0.5s;
 }
 
-.contenedor #tarjeta:hover .imgBx {
+.contenedor .tarjeta:hover .imgBx {
   top: 0%;
   transform: translateY(0%);
 }
 
-.contenedor #tarjeta .imgBx img {
+.contenedor .tarjeta .imgBx img {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -355,7 +355,7 @@ nav ul li a:hover, nav ul li a:focus {
   width: 150px;
 }
 
-.contenedor #tarjeta .pj {
+.contenedor .tarjeta .pj {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -365,19 +365,19 @@ nav ul li a:hover, nav ul li a:focus {
   z-index: 10;
 }
 
-.contenedor #tarjeta:hover .pj {
+.contenedor .tarjeta:hover .pj {
   height: 210px;
 }
 
-.contenedor #tarjeta .pj h2 {
+.contenedor .tarjeta .pj h2 {
   position: relative;
   letter-spacing: 1px;
   font-family: "Bungee Spice", cursive;
   font-size: 2.5rem;
 }
 
-.contenedor #tarjeta .pj .raza,
-.contenedor #tarjeta .pj .descript {
+.contenedor .tarjeta .pj .raza,
+.contenedor .tarjeta .pj .descript {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -387,19 +387,19 @@ nav ul li a:hover, nav ul li a:focus {
   visibility: hidden;
 }
 
-.contenedor #tarjeta:hover .pj .raza {
+.contenedor .tarjeta:hover .pj .raza {
   opacity: 1;
   visibility: visible;
   transition-delay: 0.5s;
 }
 
-.contenedor #tarjeta:hover .pj .descript {
+.contenedor .tarjeta:hover .pj .descript {
   opacity: 1;
   visibility: visible;
   transition-delay: 0.6s;
 }
 
-.contenedor #tarjeta .pj a button {
+.contenedor .tarjeta .pj a button {
   display: inline-block;
   margin-top: 10px;
   opacity: 0;
@@ -407,7 +407,7 @@ nav ul li a:hover, nav ul li a:focus {
   transition: 0.5s;
 }
 
-.contenedor #tarjeta:hover .pj a {
+.contenedor .tarjeta:hover .pj a {
   opacity: 1;
   transform: translateY(0px);
   transition-delay: 0.75s;
