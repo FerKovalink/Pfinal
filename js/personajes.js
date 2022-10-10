@@ -196,15 +196,7 @@ function updatePjs() {
 //     verMinis()
 // }
 
-async function getServer() {
-    // fetch("./personajes.json")
-    // .then((response) => response.json())
-    // .then((pj) => {
-    //     personajes = [...pj]
-    //     verMinis()
-    // })
-    // .catch((error) => console.log(error))
-
+async function getJson() {
     try {
         const response = await fetch("./personajes.json")
         const pjs = await response.json()
@@ -215,16 +207,53 @@ async function getServer() {
         console.log(error)
     }
 
+    // fetch("./personajes.json")
+    // .then((response) => response.json())
+    // .then((pj) => {
+    //     personajes = [...pj]
+    //     verMinis()
+    // })
+    // .catch((error) => console.log(error))
+
 }
 
-function postServer() {
+// async function getServer() {
+//     try {
+//         const response = await fetch("https://6340e131d1fcddf69cbef0fd.mockapi.io/api/personajes")
+//         const pjs = await response.json()
+//         // console.log(pjs)
+//         personajes = [...pjs]
 
-}
+//         verMinis()
+//     } catch (error) {
+//         console.log(error)
+//     }
+// }
+
+// async function postServer(personaje) {
+//     try {
+//         const response = await fetch("https://6340e131d1fcddf69cbef0fd.mockapi.io/api/personajes", {
+//             method: "POST",
+//             body: JSON.stringify(personaje),
+//         })
+//         console.log(response)
+//         // personajes.push(pjVer())
+//         personajes.push(personaje)
+//         formPjs.reset()
+
+//         verMinis()
+//         minis.style.display = "flex"
+//         // cartel
+//     } catch (error) {
+//         console.log(error)
+//     }
+// }
 
 function main() {
     initElementos()
     initEventos()
-    getServer()
+    // getServer()
+    getJson()
     getPjs()
 }
 
