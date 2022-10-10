@@ -13,7 +13,7 @@ let btnMostrar
 
 class Personaje {
     constructor(pj, raza, des, img, cardBg) {
-        this.pj = pj
+        this.pj = pj.toUpperCase()
         this.raza = raza.toUpperCase()
         this.des = des
         this.img = img
@@ -87,31 +87,29 @@ function validPjs(event) {
     }
 }
 
-function alertPj(icono, mensaje) {
-    const cartel = Swal.mixin({
-        toast: true,
-        position: 'top-end',
-        showConfirmButton: false,
-        timer: 2500,
-        timerProgressBar: true,
-        didOpen: (toast) => {
-            toast.addEventListener('mouseenter', Swal.stopTimer)
-            toast.addEventListener('mouseleave', Swal.resumeTimer)
-        }
-    })
+// function alertPj(icono, mensaje) {
+//     const cartel = Swal.mixin({
+//         toast: true,
+//         position: 'top-end',
+//         showConfirmButton: false,
+//         timer: 2500,
+//         timerProgressBar: true,
+//         didOpen: (toast) => {
+//             toast.addEventListener('mouseenter', Swal.stopTimer)
+//             toast.addEventListener('mouseleave', Swal.resumeTimer)
+//         }
+//     })
 
-    cartel.fire({
-        icon: `${icono}`,
-        title: `${mensaje}`,
-    })
-}
+//     cartel.fire({
+//         icon: `${icono}`,
+//         title: `${mensaje}`,
+//     })
+// }
 
 function deleteAlert(personaje) {
     Swal.fire({
-        // icon: "question",
         title: `Enviar a ${personaje} al otro mundo?`,
         width: 500,
-        // padding: '100px',
         imageUrl: 'https://github.com/FerKovalink/dnd/blob/master/img/gif/tumblr_ebd549ae8102ec54e43474ce460d8b3d_8f3b0911_640.gif?raw=true',
         imageWidth: 500,
         imageHeight: 300,
@@ -121,11 +119,31 @@ function deleteAlert(personaje) {
             rgba(0,0,0,0.4)
             url("")
             center
-            no-repeat
+            no-repeat 
             `,
         showCancelButton: true,
         confirmButtonText: "Al inframundo",
-        cancelButtonText: "Una vida mas",
+        cancelButtonText: "Dado de Salvacion",
+        customClass: {
+            container: '...',
+            popup: '...',
+            header: '...',
+            title: 'alerTitle',
+            closeButton: '...',
+            icon: '...',
+            image: '...',
+            htmlContainer: '...',
+            input: '...',
+            inputLabel: '...',
+            validationMessage: '...',
+            actions: '...',
+            confirmButton: 'btn btn-primary',
+            denyButton: 'btn btn-primary',
+            cancelButton: 'btn btn-primary',
+            loader: '...',
+            footer: '....',
+            timerProgressBar: '....',
+          }
     }).then((result) => {
         if (result.isConfirmed) {
             deletePj(personaje)

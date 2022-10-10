@@ -50,7 +50,7 @@ function initEvents() {
     formLogin.onsubmit = (event) => validLog(event)
     formNew.onsubmit = (event) => validNew(event)
     btnForm.onclick = mostrarForm
-    btnSwal.onclick = alertS
+    btnSwal.onclick = alertLogin
 
 }
 
@@ -59,7 +59,7 @@ function mostrarForm() {
     formNew.style.display = "block"
 }
 
-function alertS(icono, mensaje) {
+function alertLogin(icono, mensaje) {
     const cartel = Swal.mixin({
         toast: true,
         position: 'top-end',
@@ -91,7 +91,7 @@ function validNew(event) {
     const valUser = cuentas.some((cuenta) => cuenta.user === user)
     const valMail = cuentas.some((cuenta) => cuenta.mail === mail)
     if (valMail || valUser) {
-        alertS("error", "E-mail o usuario registrado, intente con otro")
+        alertLogin("error", "E-mail o usuario registrado, intente con otro")
     } else {
         let nuevoUser = new Login(user, pass, nombre, apellido, edad, mail)
 
@@ -99,7 +99,7 @@ function validNew(event) {
         formNew.reset()
         updateUser()
 
-        alertS("success", "Cuenta creada")
+        alertLogin("success", "Cuenta creada")
     }
 }
 
@@ -112,7 +112,7 @@ function validLog(event) {
     const valPass = cuentas.some((cuentas) => cuentas.pass === pass)
 
     if (valUser && valPass) {
-        alertS("info", "Usuario correcto")
+        alertLogin("info", "Usuario correcto")
         const cartel = document.createElement("div")
         cartel.className = "alert"
         cartel.innerHTML = `<h3>Bienvenido ${user}</h3>`
@@ -120,7 +120,7 @@ function validLog(event) {
         cuentasUser.style.display = "none"
         formPer.style.display = "block"
     } else {
-        alertS("error", "Datos incorrectos")
+        alertLogin("error", "Datos incorrectos")
     }
 }
 
