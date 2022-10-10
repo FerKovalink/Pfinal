@@ -109,10 +109,20 @@ function alertPj(icono, mensaje) {
 function deleteAlert(personaje) {
     Swal.fire({
         icon: "question",
-        title: `¿Estas seguro que quieres eliminar a ${personaje}?`,
+        title: `Enviar a ${personaje} al otro mundo?`,
+        width: 600,
+        padding: '20px',
+        // color: '#716add',
+        background: 'url(/images/trees.png)',
+        backdrop: `
+            rgba(0,0,123,0.4)
+            url("/images/nyan-cat.gif")
+            left top
+            no-repeat
+            `,
         showCancelButton: true,
-        confirmButtonText: "Eliminar",
-        cancelButtonText: "Cancelar",
+        confirmButtonText: "Al inframundo",
+        cancelButtonText: "Una vida mas",
     }).then((result) => {
         if (result.isConfirmed) {
             deletePj(personaje)
