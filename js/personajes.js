@@ -13,8 +13,8 @@ let btnMostrar
 
 class Personaje {
     constructor(pj, raza, des, img, cardBg) {
-        this.pj = pj.toUpperCase()
-        this.raza = raza.toUpperCase()
+        this.pj = pj
+        this.raza = raza
         this.des = des
         this.img = img
         this.cardBg = cardBg
@@ -42,8 +42,8 @@ function initEventos() {
 
 function validPjs(event) {
     event.preventDefault()
-    let pj = inPj.value
-    let raza = inRaza.value
+    let pj = inPj.value.toUpperCase()
+    let raza = inRaza.value.toUpperCase()
     let des = inDes.value
     let imgPj = inImg.value
     let img

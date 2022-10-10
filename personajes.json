@@ -1,5 +1,5 @@
 [{
-        "pj": "dungeon master",
+        "pj": "Dungeon Master",
         "raza": "dm",
         "des": "Patt creador, director y guionista de las aventuras. Cabeza y parte del team",
         "img": "https://github.com/FerKovalink/d-d/blob/master/img/pjs/dm2.png?raw=true",
@@ -13,7 +13,7 @@
         "cardBg": "url('https://github.com/FerKovalink/d-d/blob/master/img/minis/enanoo.jpg?raw=true')"
     },
     {
-        "pj": "ectup",
+        "pj": "Ectup",
         "raza": "mago",
         "des": "Un gran hechicero junto a su compañero Parentes, estan en busca del conocimiento y el poder",
         "img": "https://github.com/FerKovalink/d-d/blob/master/img/pjs/pants2.png?raw=true",
