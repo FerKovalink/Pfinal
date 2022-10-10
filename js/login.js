@@ -75,6 +75,8 @@ function alertLogin(icono, mensaje) {
     cartel.fire({
         icon: `${icono}`,
         title: `${mensaje}`,
+        background: "#171717",
+        color: '#0b8062',
     })
 }
 

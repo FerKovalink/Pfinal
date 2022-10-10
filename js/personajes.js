@@ -125,24 +125,9 @@ function deleteAlert(personaje) {
         confirmButtonText: "Al inframundo",
         cancelButtonText: "Dado de Salvacion",
         customClass: {
-            container: '...',
-            popup: '...',
-            header: '...',
-            title: 'alerTitle',
-            closeButton: '...',
-            icon: '...',
-            image: '...',
-            htmlContainer: '...',
-            input: '...',
-            inputLabel: '...',
-            validationMessage: '...',
-            actions: '...',
             confirmButton: 'btn btn-primary',
             denyButton: 'btn btn-primary',
             cancelButton: 'btn btn-primary',
-            loader: '...',
-            footer: '....',
-            timerProgressBar: '....',
           }
     }).then((result) => {
         if (result.isConfirmed) {
