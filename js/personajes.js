@@ -135,14 +135,14 @@ function mostrarPjs(personaje) {
 }
 
 function verMinis() {
-    minis.style.padding = '20px'
+    minis.style.padding = '60px'
     minis.innerHTML = ""
     personajes.forEach((personaje) => {
         let minisCreadas = document.createElement("div")
         minisCreadas.className = "contenedor"
         minisCreadas.id = `minisCreadas-${personaje.pj}`
         minisCreadas.innerHTML = `
-            <div id="tarjeta">
+            <div class="tarjeta">
                 <div class="imgBx">
                     <img src="${personaje.img}">
                 </div>
