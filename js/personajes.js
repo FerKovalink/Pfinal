@@ -108,16 +108,16 @@ function alertPj(icono, mensaje) {
 
 function deleteAlert(personaje) {
     Swal.fire({
-        icon: "question",
+        // icon: "question",
         title: `Enviar a ${personaje} al otro mundo?`,
         width: 600,
-        padding: '20px',
+        padding: '100px',
         // color: '#716add',
-        background: 'url(/images/trees.png)',
+        background: 'url(https://github.com/FerKovalink/dnd/blob/master/img/gif/tumblr_ebd549ae8102ec54e43474ce460d8b3d_8f3b0911_640.gif?raw=true)',
         backdrop: `
-            rgba(0,0,123,0.4)
-            url("/images/nyan-cat.gif")
-            left top
+            rgba(0,0,0,0.4)
+            url("")
+            center
             no-repeat
             `,
         showCancelButton: true,
