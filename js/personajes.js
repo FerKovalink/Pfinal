@@ -110,10 +110,13 @@ function deleteAlert(personaje) {
     Swal.fire({
         // icon: "question",
         title: `Enviar a ${personaje} al otro mundo?`,
-        width: 600,
-        padding: '100px',
-        // color: '#716add',
-        background: 'url(https://github.com/FerKovalink/dnd/blob/master/img/gif/tumblr_ebd549ae8102ec54e43474ce460d8b3d_8f3b0911_640.gif?raw=true)',
+        width: 500,
+        // padding: '100px',
+        imageUrl: 'https://github.com/FerKovalink/dnd/blob/master/img/gif/tumblr_ebd549ae8102ec54e43474ce460d8b3d_8f3b0911_640.gif?raw=true',
+        imageWidth: 500,
+        imageHeight: 300,
+        color: '#0b8062',
+        background: "#171717",
         backdrop: `
             rgba(0,0,0,0.4)
             url("")
