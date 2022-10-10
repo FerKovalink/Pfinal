@@ -106,6 +106,20 @@ function alertPj(icono, mensaje) {
     })
 }
 
+function deleteAlert(personaje) {
+    Swal.fire({
+        icon: "question",
+        title: `¿Estas seguro que quieres eliminar a ${personaje}?`,
+        showCancelButton: true,
+        confirmButtonText: "Eliminar",
+        cancelButtonText: "Cancelar",
+    }).then((result) => {
+        if (result.isConfirmed) {
+            deletePj(personaje)
+        }
+    })
+}
+
 function cartelPjs(mensaje) {
     const cartel = document.createElement("div")
     cartel.className = "alert"
@@ -162,7 +176,7 @@ function verMinis() {
         minis.append(minisCreadas)
 
         let btnDelete = document.getElementById(`minisCreadas-${personaje.pj}`)
-        btnDelete.onclick = () => deletePj(personaje.pj)
+        btnDelete.onclick = () => deleteAlert(personaje.pj)
     })
 }
 
