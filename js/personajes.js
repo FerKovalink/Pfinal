@@ -95,10 +95,7 @@ function deleteAlert(personaje) {
         color: '#0b8062',
         background: "#171717",
         backdrop: `
-            rgba(0,0,0,0.4)
-            url("")
-            center
-            no-repeat 
+            rgba(0,0,0,0.5)
             `,
         showCancelButton: true,
         confirmButtonText: "Al inframundo",
