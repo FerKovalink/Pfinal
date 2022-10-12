@@ -80,7 +80,6 @@ function alertLogin(icono, mensaje) {
     })
 }
 
-
 function validNew(event) {
     event.preventDefault()
     let user = inUser.value
@@ -125,7 +124,6 @@ function validLog(event) {
         alertLogin("error", "Datos incorrectos")
     }
 }
-
 
 function getUser() {
     let userJSON = localStorage.getItem("usuarios")

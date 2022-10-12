@@ -1,5 +1,6 @@
 nav {
   background: map-get($map: $color, $key: "gris");
+
   ul {
     li {
       a {
@@ -41,28 +42,29 @@ nav {
 .intro {
   background-color: black;
   text-align: center;
-  h1{
+
+  h1 {
     font-family: map-get($map: $fonts, $key:"combo");
-    color:map-get($map: $color, $key:"verde");
+    color: map-get($map: $color, $key:"verde");
     font-size: 6rem;
     font-weight: 700;
     margin: 20px 0;
   }
 }
 
-.mapa{
+#map {
   @include box-flex(center, center, column);
   width: 100%;
   background-color: map-get($map: $color, $key:"negro");
 
-  video{
+  video {
     width: 1280px;
     height: 720px;
     border-radius: 60px;
     margin-bottom: 50px;
   }
 
-  h4{
+  h4 {
     font-family: map-get($map: $fonts, $key:'nav');
     font-size: 5rem;
     padding: 1%;

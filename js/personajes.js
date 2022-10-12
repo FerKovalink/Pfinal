@@ -9,7 +9,6 @@ let verPjs
 let cartelPj
 let minis
 let tarjeta
-let btnMostrar
 
 class Personaje {
     constructor(pj, raza, des, img, cardBg) {
@@ -32,12 +31,10 @@ function initElementos() {
     cartelPj = document.getElementById("cartelPj")
     minis = document.getElementById("minis")
     tarjeta = document.getElementById("tarjeta")
-    btnMostrar = document.getElementById("btnMostrar")
 }
 
 function initEventos() {
     formPjs.onsubmit = (event) => validPjs(event)
-    // btnMostrar.onclick = verCreados()
 }
 
 function validPjs(event) {
@@ -87,24 +84,6 @@ function validPjs(event) {
     }
 }
 
-// function alertPj(icono, mensaje) {
-//     const cartel = Swal.mixin({
-//         toast: true,
-//         position: 'top-end',
-//         showConfirmButton: false,
-//         timer: 2500,
-//         timerProgressBar: true,
-//         didOpen: (toast) => {
-//             toast.addEventListener('mouseenter', Swal.stopTimer)
-//             toast.addEventListener('mouseleave', Swal.resumeTimer)
-//         }
-//     })
-
-//     cartel.fire({
-//         icon: `${icono}`,
-//         title: `${mensaje}`,
-//     })
-// }
 
 function deleteAlert(personaje) {
     Swal.fire({
@@ -220,12 +199,6 @@ function updatePjs() {
 
 }
 
-// function delAll() {
-//     sessionStorage.clear()
-//     personajes = []
-//     verMinis()
-// }
-
 async function getJson() {
     try {
         const response = await fetch("./personajes.json")
@@ -236,15 +209,6 @@ async function getJson() {
     } catch (error) {
         console.log(error)
     }
-
-    // fetch("./personajes.json")
-    // .then((response) => response.json())
-    // .then((pj) => {
-    //     personajes = [...pj]
-    //     verMinis()
-    // })
-    // .catch((error) => console.log(error))
-
 }
 
 // async function getServer() {
